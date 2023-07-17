@@ -157,3 +157,48 @@ Create table MixeshasCanciones(
 	constraint FK_MixeshasCanciones_Mixes foreign key
 		(codigoMix) references Mixes(codigoMix) on update cascade on delete cascade
 );
+
+-- LOGIN CRUD ----------------------------------------------
+
+DELIMITER $$
+	Create Procedure sp_AgregarLogin(in _codigoUsuario int)
+		Begin
+			Insert into Login(codigoUsuario, fechaLogin, horaLogin, EstadoSesion)
+				values(_codigoUsuario, curdate(),curtime(),true);
+        End$$
+DELIMITER ;
+
+DELIMITER $$
+	Create procedure sp_EliminarLogin(in _codigoLogin int)
+		Begin
+			Delete from Login where codigoLogin = _codigoLogin;
+        End$$
+DELIMITER ;
+
+DELIMITER $$
+	Create procedure sp_ListarLogins()
+		Begin
+			Select 
+				L.codigoLogin,
+                L.fechaLogin,
+                L.horaLogin,
+                L.estadoSesion,
+                L.codigoUsuario
+					from Login L;
+        End$$
+DELIMITER ;
+
+DELIMITER $$
+	Create procedure sp_BuscarLogin(in _codigoLogin int)
+		Begin
+			Select 
+				L.codigoLogin,
+                L.fechaLogin,
+                L.horaLogin,
+                L.estadoSesion,
+                L.codigoUsuario
+					from Login L where L.codigoLogin = _codigoLogin;
+        End$$
+DELIMITER ;
+
+
