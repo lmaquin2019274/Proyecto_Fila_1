@@ -41,7 +41,7 @@ Create table Album(
 Create table Canciones(
     codigoCancion int not null auto_increment,
     nombreCancion varchar(20) not null,
-	direccionRaw varchar(20) not null,
+	nombreRaw varchar(20) not null,
     duracion varchar(5) not null,
     codigoGenero int not null,
     codigoArtista int not null,
@@ -123,11 +123,14 @@ Create table HistorialReproduccion(
 	codigoHistorialR int not null auto_increment,
     fechaHR date not null,
     horaHR datetime not null,
-    Origen varchar(30) not null,
+    origen varchar(30) not null,
     codigoUsuario int not null,
+    codigoCancion int not null,
     Primary key PK_codigoHistorialR (codigoHistorialR),
     constraint FK_HistorialReproduccion_Usuario foreign key
-		(codigoUsuario) references Usuarios(codigoUsuario) on update cascade on delete cascade
+		(codigoUsuario) references Usuarios(codigoUsuario) on update cascade on delete cascade,
+	constraint FK_HistorialReproduccion_Canciones foreign key
+		(codigoCancion) references Canciones(codigoCancion) on update cascade on delete cascade
 );
 
 Create table PlaylisthasCanciones(
