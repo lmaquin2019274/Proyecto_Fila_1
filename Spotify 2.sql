@@ -41,7 +41,7 @@ Create table Album(
 Create table Canciones(
     codigoCancion int not null auto_increment,
     nombreCancion varchar(20) not null,
-	direccionRaw varchar(20) not null,
+	NombreRaw varchar(20) not null,
     duracion varchar(5) not null,
     codigoGenero int not null,
     codigoArtista int not null,
