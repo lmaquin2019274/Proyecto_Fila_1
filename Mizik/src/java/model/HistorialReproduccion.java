@@ -12,16 +12,18 @@ public class HistorialReproduccion {
     private LocalDateTime horaHR;
     private String origen;
     private int codigoUsuario;
+    private int codigoCancion;
 
     public HistorialReproduccion() {
     }
 
-    public HistorialReproduccion(int codigoHistorialR, Date fechaHR, LocalDateTime horaHR, String origen, int codigoUsuario) {
+    public HistorialReproduccion(int codigoHistorialR, Date fechaHR, LocalDateTime horaHR, String origen, int codigoUsuario, int codigoCancion) {
         this.codigoHistorialR = codigoHistorialR;
         this.fechaHR = fechaHR;
         this.horaHR = horaHR;
         this.origen = origen;
         this.codigoUsuario = codigoUsuario;
+        this.codigoCancion = codigoCancion;
     }
 
     public int getCodigoHistorialR() {
@@ -62,5 +64,13 @@ public class HistorialReproduccion {
 
     public void setCodigoUsuario(int codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
+    }
+
+    public int getCodigoCancion() {
+        return codigoCancion;
+    }
+
+    public void setCodigoCancion(int codigoCancion) {
+        this.codigoCancion = codigoCancion;
     }
 }
