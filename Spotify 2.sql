@@ -157,3 +157,4 @@ Create table MixeshasCanciones(
 	constraint FK_MixeshasCanciones_Mixes foreign key
 		(codigoMix) references Mixes(codigoMix) on update cascade on delete cascade
 );
+
