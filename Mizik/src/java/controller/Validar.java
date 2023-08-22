@@ -1,5 +1,4 @@
 //@author lmaquin2019274
-
 package controller;
 
 import java.io.IOException;
@@ -41,24 +40,40 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //captura la peticion del usuario
+        // Captura la petición del usuario
         String accion = request.getParameter("accion");
         if (accion.equalsIgnoreCase("Login")) {
-            // capturar el user y password
-            String usuario = request.getParameter("txtUser");//usuario
-            String pass = request.getParameter("txtPass");//contraseña
-            user = userDao.validar(usuario, pass);
-            if (user.getUsuario() != null) {
-                request.setAttribute("usuario", user);
-                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
-            } else {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-//            empleado 
+            // Capturar el usuario y contraseña
+            String usuario = request.getParameter("txtUser");
+            String pass = request.getParameter("txtPass");
 
+            // Validar que los campos no estén vacíos
+            if (!usuario.isEmpty() && !pass.isEmpty()) {
+
+                user = userDao.validar(usuario, pass);
+
+                if (user != null) {
+                    // Usuario válido, redirigir a la página principal
+                    request.setAttribute("usuario", user);
+                    request.getRequestDispatcher("Controlador?menu=Principal&codUsuario=" + user.getCodigoUsuario()).forward(request, response);
+                } else {
+                    // Usuario o contraseña incorrectos, mostrar mensaje de error en la página index.jsp
+                    request.setAttribute("error", "Usuario o contraseña incorrectos");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+            } else {
+                // Campos vacíos, mostrar mensaje de error en la página index.jsp
+                request.setAttribute("error", "Por favor, ingrese usuario y contraseña");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+            }
         } else {
+            // Acción desconocida, mostrar mensaje de error en la página index.jsp
+            request.setAttribute("error", "Acción desconocida");
             request.getRequestDispatcher("index.jsp").forward(request, response);
+
         }
+
     }
 
     @Override

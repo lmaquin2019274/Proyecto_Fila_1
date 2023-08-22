@@ -1,0 +1,270 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class Principal_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"mizikCss.css\">\r\n");
+      out.write("        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"img/logo.ico\" />\r\n");
+      out.write("        <title>Mizik® for everyone</title>\r\n");
+      out.write("        <script src=\"https://kit.fontawesome.com/bb229f5329.js\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body id=\"body\">\r\n");
+      out.write("        <header>\r\n");
+      out.write("            <div class=\"icon_menu\">\r\n");
+      out.write("                <i class=\"fa-solid fa-bars\" style=\"color: #3f4529;\" id=\"btn_open\"></i>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"title_header\">\r\n");
+      out.write("                <h1>.                 Mizik®</h1>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"youtube-style-icon\">\r\n");
+      out.write("                <img src=\"img/darevalo.jpeg\" alt=\"\" class=\"youtube-style-icon\"> \r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("        </header>\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"menu_side\" id=\"menu_side\">\r\n");
+      out.write("            <div class=\"name_page\">\r\n");
+      out.write("                <img src=\"img/logo.png\" alt=\"14\" width=\"26\"/>\r\n");
+      out.write("                <h4>Mizik®</h4>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"options_menu\">\r\n");
+      out.write("                <a href=\"#\" id=\"inicio-tab\" class=\"selected\">\r\n");
+      out.write("                    <div class=\"option\">\r\n");
+      out.write("                        <i class=\"fa-solid fa-house\" style=\"color: #f7c607;\" title=\"Inicio\"></i>\r\n");
+      out.write("                        <h4>Inicio</h4>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </a>\r\n");
+      out.write("\r\n");
+      out.write("                <a href=\"#\" id=\"biblioteca-tab\">\r\n");
+      out.write("                    <div class=\"option\">\r\n");
+      out.write("                        <i class=\"fa-solid fa-music\" style=\"color: #f7c607;\" title=\"Biblioteca\"></i>\r\n");
+      out.write("                        <h4>Biblioteca</h4>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </a>\r\n");
+      out.write("\r\n");
+      out.write("                <a href=\"#\" id=\"buscar-tab\">\r\n");
+      out.write("                    <div class=\"option\">\r\n");
+      out.write("                        <i class=\"fa-solid fa-magnifying-glass\" style=\"color: #f7c607;\" title=\"Buscar\"></i>\r\n");
+      out.write("                        <h4>Buscar</h4>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </a>\r\n");
+      out.write("\r\n");
+      out.write("                <a href=\"#\" id=\"opciones-tab\">\r\n");
+      out.write("                    <div class=\"option\">\r\n");
+      out.write("                        <i class=\"fa-solid fa-gear\" style=\"color: #f7c607;\" title=\"Opciones\"></i>\r\n");
+      out.write("                        <h4>Opciones</h4>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </a>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("        <main>\r\n");
+      out.write("            <div id=\"inicio\">\r\n");
+      out.write("                <h1>Buenos días</h1>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=mixes\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-radio\" style=\"color: #632783;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=mixes\">Mixes del día</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=artistas\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-icons\" style=\"color: #2e741d;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=artistas\">Explora diferentes artistas</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=albumes\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-record-vinyl\" style=\"color: #2b6895;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=albumes\">Los mejores álbumes</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div id=\"biblioteca\" style=\"display: none;\">\r\n");
+      out.write("                <h1>Biblioteca</h1>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=favoritos\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-heart\" style=\"color: #cc0005;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=favoritos\">Tus favoritos</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=playlists\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-music\" style=\"color: #f5c607;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=playlists\">Tus playlist</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=biblioteca\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-sliders\" style=\"color: #606060;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=biblioteca\">Otros</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div id=\"buscar\" style=\"display: none;\">\r\n");
+      out.write("                <h1>Buscar</h1>\r\n");
+      out.write("                <div class=\"search-bar\">\r\n");
+      out.write("                    <input type=\"text\" name=\"txtBuscar\" placeholder=\"Busca canciones, artistas y álbumes\">\r\n");
+      out.write("                    <div class=\"search-icon\"><i class=\"fa-solid fa-magnifying-glass\"></i></div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=canciones\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-headphones-simple\" style=\"color: #8c1253;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=canciones\">Canciones guardadas</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image_biblioteca\">\r\n");
+      out.write("                    <div class=\"content_biblioteca\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=genero\">\r\n");
+      out.write("                            <i class=\"fa-solid fa-compact-disc\" style=\"color: #7684b4;\"></i>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=genero\">Géneros musicales</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div id=\"opciones\" style=\"display: none;\">\r\n");
+      out.write("                <h1>Opciones</h1>\r\n");
+      out.write("                <br>\r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=listarUsuarios\">\r\n");
+      out.write("                            <img src=\"img/Usuarios.svg\" alt=\"Usuarios\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=listarUsuarios\">Usuarios</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=historialBusqueda\">\r\n");
+      out.write("                            <img src=\"img/historialBusqueda.svg\" alt=\"historialBusqueda\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=historialBusqueda\">Historial de búsquedas</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=HistorialReproduccion\">\r\n");
+      out.write("                            <img src=\"img/historialReproduccion.svg\" alt=\"HistorialReproduccion\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=HistorialReproduccion\">Historial de reproducciones</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=login\">\r\n");
+      out.write("                            <img src=\"img/registroLogin.svg\" alt=\"login\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=login\">Registro de login</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                \r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=subirFoto\">\r\n");
+      out.write("                            <img src=\"img/subir.png\" alt=\"subir\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=subirFoto\">Configurar Perfil</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                \r\n");
+      out.write("                <div class=\"image-container\">\r\n");
+      out.write("                    <div class=\"content-wrapper\">\r\n");
+      out.write("                        <a href=\"Controlador?accion=index\">\r\n");
+      out.write("                            <img src=\"img/signOut.svg\" alt=\"signOut\" width=\"30\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <a class=\"link\" href=\"Controlador?accion=index\">Cerrar Sesión</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                <a class=\"link_nosotros\" href=\"Controlador?accion=config\">Sobre nosotros</a><br>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </main>\r\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("\r\n");
+      out.write("    <script src=\"js/script.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("</html>\r\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

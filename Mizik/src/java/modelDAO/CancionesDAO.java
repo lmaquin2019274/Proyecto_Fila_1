@@ -53,20 +53,21 @@ import model.Canciones;
             con = conect.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-            while (rs.next())
-            {
+            while (rs.next()) {
+                Canciones nCanciones = new Canciones();
                 nCanciones.setCodigoCancion(rs.getInt("codigoCancion"));
                 nCanciones.setNombreCancion(rs.getString("nombreCancion"));
-                nCanciones.setNombreRaw(rs.getString("nombreRaw"));
+                nCanciones.setNombreRaw(rs.getString("direccionRaw"));
                 nCanciones.setDuracion(rs.getString("duracion"));
                 nCanciones.setCodigoGenero(rs.getInt("codigoGenero"));
                 nCanciones.setCodigoArtista(rs.getInt("codigoArtista"));
                 nCanciones.setCodigoAlbum(rs.getInt("codigoAlbum"));
+                return nCanciones;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return nCanciones;
+        return null;
     }
 
     @Override

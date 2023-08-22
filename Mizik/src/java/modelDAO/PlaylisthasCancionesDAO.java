@@ -10,6 +10,7 @@ import java.util.List;
 
 import configuration.Conexion;
 import interfaces.CRUDPlaylisthasCanciones;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import model.PlaylisthasCanciones;
@@ -22,25 +23,50 @@ public class PlaylisthasCancionesDAO implements CRUDPlaylisthasCanciones{
     PlaylisthasCanciones nuevoPlaylisthasCanciones = new PlaylisthasCanciones();
 
     @Override
-    public boolean agregarPlaylisthasCanciones(PlaylisthasCanciones PlaylisthasCanciones) {
-        String sql = "insert into PlaylisthasCanciones(codigoPlaylisthasCanciones,fechaPC, horaPC, numeroUnico, codigoCancion, codigoPlaylist) values('"+nuevoPlaylisthasCanciones.getCodigoPlaylisthasCanciones()+"', '"+nuevoPlaylisthasCanciones.getFechaPC()+"', '"+nuevoPlaylisthasCanciones.getHoraPC()+"', '"+nuevoPlaylisthasCanciones.getNumeroUnico()+"', '"+nuevoPlaylisthasCanciones.getCodigoCancion()+"','"+nuevoPlaylisthasCanciones.getCodigoPlaylist()+"')";
-        try{
+    public boolean agregarPlaylisthasCanciones(PlaylisthasCanciones nuevoPlaylisthasCanciones) {
+        String sql = "INSERT INTO PlaylisthasCanciones (fechaPC, horaPC, numeroUnico, codigoCancion, codigoPlaylist) VALUES (now(), now(), 1, ?, ?)";
+        Connection con = null;
+        try {
             con = conect.getConnection();
+            con.setAutoCommit(false);
+            
             ps = con.prepareStatement(sql);
+            ps.setInt(1, nuevoPlaylisthasCanciones.getCodigoCancion());
+            ps.setInt(2, nuevoPlaylisthasCanciones.getCodigoPlaylist());
             ps.executeUpdate();
-        }catch(Exception e){
+            
+            con.commit();
+            con.setAutoCommit(true);
+            
+            return true;
+        } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                con.rollback();
+                con.setAutoCommit(true);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
         return false;
     }
-
+    
     @Override
     public boolean eliminarPlaylisthasCanciones(int id) {
-        String sql = "delete from PlaylisthasCanciones where codigoPlaylisthasCanciones" + id;
+        String sql = "delete from PlaylisthasCanciones where codigoPlaylisthasCanciones = ?";
+        Connection con = null;
         try {
             con = conect.getConnection();
+            con.setAutoCommit(false);
+            
             ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
             ps.executeUpdate();
+            
+            con.commit();
+            con.setAutoCommit(true);
+            
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,7 +83,7 @@ public class PlaylisthasCancionesDAO implements CRUDPlaylisthasCanciones{
             rs = ps.executeQuery();
             while (rs.next()) {
                 PlaylisthasCanciones nuevoPlaylisthasCanciones = new PlaylisthasCanciones();
-                nuevoPlaylisthasCanciones.setCodigoPlaylisthasCanciones(rs.getInt("CodigoPHC"));
+                nuevoPlaylisthasCanciones.setCodigoPlaylisthasCanciones(rs.getInt("codigoPlaylisthasCanciones"));
                 nuevoPlaylisthasCanciones.setFechaPC(rs.getDate("fechaPC"));
                 LocalDateTime localDateTime = LocalDateTime.of(LocalDate.now(), rs.getTime("horaPC").toLocalTime());
                 nuevoPlaylisthasCanciones.setNumeroUnico(rs.getInt("numeroUnico"));

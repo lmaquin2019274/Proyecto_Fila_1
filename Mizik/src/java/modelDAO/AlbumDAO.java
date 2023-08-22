@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import model.Album;
+import model.Canciones;
 
 
 public class AlbumDAO implements CRUDAlbum{
@@ -79,5 +80,32 @@ public class AlbumDAO implements CRUDAlbum{
         return false;
     }
     
+    @Override
+    public List<Canciones> listarCanciones(int id) {
+            ArrayList<Canciones> listaCanciones = new ArrayList<>();
+        String sql = "select * from Canciones where codigoAlbum = ?";
+        try {
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Canciones nuevaCancion = new Canciones();
+                nuevaCancion.setCodigoCancion(rs.getInt("codigoCancion"));
+                nuevaCancion.setNombreCancion(rs.getString("nombreCancion"));
+                nuevaCancion.setNombreRaw(rs.getString("direccionRaw"));
+                nuevaCancion.setDuracion(rs.getString("duracion"));
+                nuevaCancion.setCodigoGenero(rs.getInt("codigoGenero"));
+                nuevaCancion.setCodigoArtista(rs.getInt("codigoArtista"));
+                nuevaCancion.setCodigoAlbum(rs.getInt("codigoAlbum"));
+                
+                listaCanciones.add(nuevaCancion);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return listaCanciones;
+    }
     
 }

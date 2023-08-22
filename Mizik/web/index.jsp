@@ -5,11 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
         <title>Bienvenidos</title>
     </head>
     <body>
@@ -19,6 +21,14 @@
                     <form class="form-sign" action="Validar" method="Post">
                         <div class="form-group text-center">
                             <h3>Login</h3>
+
+                            <%-- Agrega este código para mostrar el mensaje de error si existe --%>
+                            <c:if test="${not empty error}">
+                                <p style="color: red">${error}</p>
+                                <%-- Limpia el mensaje de error de la sesión después de mostrarlo --%>
+                                <% session.removeAttribute("error");%>
+                            </c:if>
+
                             <img src="img/logo.png" alt="70" width="130"/><br>
                             <label>Mizik®</label>
                         </div>
@@ -30,8 +40,11 @@
                             <label>Contraseña</label>
                             <input type="password" name="txtPass" class="form-control">
                         </div>
+                        <input type="hidden" name="menu" value="Principal">
                         <input type="submit" name="accion" value="Login" class="btn btn-primary btn-block"><br>
-                        <input type="submit" name="accion" value="Sigin" class="btn btn-primary btn-block">
+                        <div class="text-center">
+                            <a href="Controlador?accion=addUsuarioD">Sigup</a>
+                        </div>
                     </form>
                 </div>
             </div>

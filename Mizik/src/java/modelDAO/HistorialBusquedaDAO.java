@@ -20,12 +20,13 @@ public class HistorialBusquedaDAO implements CRUDHistorialBusqueda{
     HistorialBusqueda nHistorialBusqueda = new HistorialBusqueda();
     
      @Override
-    public List<HistorialBusqueda> listarHistorialBusqueda() {
+    public List<HistorialBusqueda> listarHistorialBusqueda(int codigoUsuario) {
         ArrayList<HistorialBusqueda> listaHistorialBusqueda = new ArrayList<>();
-        String sql = "select * from HistorialBusqueda";
+        String sql = ("select * from HistorialBusqueda where codigoUsuario = ?");
          try {
              con = connect.getConnection();
              ps = con.prepareStatement(sql);
+             ps.setInt(1, codigoUsuario);
              rs = ps.executeQuery();
              while (rs.next()){
                 HistorialBusqueda nuevocodigoHistorialB = new HistorialBusqueda();
@@ -80,15 +81,16 @@ public class HistorialBusquedaDAO implements CRUDHistorialBusqueda{
 
     @Override
     public boolean eliminarHistorialBusqueda(int id) {
-        String sql = "delete from HistorialBusqueda where codigoHistorialB" +id;
+        String sql = "delete from HistorialBusqueda where codigoHistorialB = ?";
         try {
             con = connect.getConnection();
             ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
             ps.executeUpdate();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
         return false;
     }
 }

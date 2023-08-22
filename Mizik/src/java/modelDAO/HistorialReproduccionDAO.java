@@ -36,11 +36,13 @@ public class HistorialReproduccionDAO implements CRUDHistorialReproduccion{
 
     @Override
     public boolean eliminarHistorialReproduccion(int id) {
-        String sql = "delete from HistorialReproduccion where codigoHistorialR" + id;
+        String sql = "delete from HistorialReproduccion where codigoHistorialR = ?";
         try {
             con = conect.getConnection();
             ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
             ps.executeUpdate();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,27 +50,27 @@ public class HistorialReproduccionDAO implements CRUDHistorialReproduccion{
     }
 
     @Override
-    public List<HistorialReproduccion> listarHistorialReproduccion() {
+    public List<HistorialReproduccion> listarHistorialReproduccion(int codigoUsuario) {
         ArrayList<HistorialReproduccion> listaHistorialReproduccion = new ArrayList<>();
-        String sql = "select * from HistorialReproduccion";
-        try {
-            con = conect.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                HistorialReproduccion nHistorialR = new HistorialReproduccion();
-                nHistorialR.setCodigoHistorialR(rs.getInt("codigoHistorialR"));
-                nHistorialR.setFechaHR(rs.getDate("fechaHR"));
-                LocalDateTime localDateTime = LocalDateTime.of(LocalDate.now(), rs.getTime("horaHR").toLocalTime());
-                nHistorialR.setOrigen(rs.getString("origen"));
-                nHistorialR.setCodigoUsuario(rs.getInt("codigoUsuario")); 
-                nHistorialR.setCodigoCancion(rs.getInt("codigoCancion"));
-                listaHistorialReproduccion.add(nHistorialR);
-            }
+        String sql = ("select * from HistorialReproduccion where codigoUsuario = ?");
+         try {
+             con = conect.getConnection();
+             ps = con.prepareStatement(sql);
+             ps.setInt(1, codigoUsuario);
+             rs = ps.executeQuery();
+             while (rs.next()){
+                HistorialReproduccion hr = new HistorialReproduccion();
+                hr.setCodigoHistorialR(rs.getInt("codigoHistorialR"));
+                hr.setFechaHR(rs.getDate("fechaHR"));
+                hr.setHoraHR(LocalDateTime.MAX);
+                hr.setOrigen(rs.getString("Origen"));
+                hr.setCodigoUsuario(rs.getInt("codigoUsuario"));
+                listaHistorialReproduccion.add(hr);
+             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+         
         return listaHistorialReproduccion;
     }
 

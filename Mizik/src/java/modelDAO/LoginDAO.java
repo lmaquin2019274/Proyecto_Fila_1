@@ -6,7 +6,9 @@ import configuration.Conexion;
 import interfaces.CRUDLogin;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -18,20 +20,37 @@ public class LoginDAO implements CRUDLogin {
     Conexion conect = new Conexion();
     Connection con;
     CallableStatement cs;
+    PreparedStatement ps;
     ResultSet rs;
     Login nLogin = new Login();
 
     @Override
     public boolean agregarLogin(Login login) {
-        String sql = "Call sp_AgregarLogin(" + login.getCodigoLogin() + ")";
+        String sql = "INSERT INTO Login (fechaLogin, horaLogin, estadoSesion, codigoUsuario) VALUES (now(), now(), ?, ?)";
         try {
             con = conect.getConnection();
-            cs = con.prepareCall(sql);
-            cs.executeUpdate();
+            ps = con.prepareStatement(sql);
+
+            ps.setBoolean(1, login.isEstadoSesion());
+            ps.setInt(2, login.getCodigoUsuario());
+
+            ps.executeUpdate();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
-        return false;
     }
 
     @Override
@@ -50,7 +69,7 @@ public class LoginDAO implements CRUDLogin {
     @Override
     public List<Login> listarLogins() {
         ArrayList<Login> lista = new ArrayList<Login>();
-        String sql = "Call sp_ListarLogins()";
+        String sql = "Select * from Login";
         try {
             con = conect.getConnection();
             cs = con.prepareCall(sql);
@@ -63,6 +82,7 @@ public class LoginDAO implements CRUDLogin {
                 nuevoLogin.setHoraLogin(localDateTime);
                 nuevoLogin.setEstadoSesion(rs.getBoolean("estadoSesion"));
                 nuevoLogin.setCodigoUsuario(rs.getInt("codigoUsuario"));
+                lista.add(nuevoLogin);
             }
         } catch (Exception e) {
             e.printStackTrace();
