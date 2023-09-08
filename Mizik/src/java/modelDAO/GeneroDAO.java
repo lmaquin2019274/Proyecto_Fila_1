@@ -7,6 +7,7 @@ import interfaces.CRUDGeneros;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Canciones;
@@ -62,6 +63,40 @@ public class GeneroDAO implements CRUDGeneros {
         return nGenero;
     }
 
+    @Override
+    public Generos buscarGeneros(int id) {
+        String sql = "select * from Generos where codigoGenero =" + id;
+        try {
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                nGenero.setCodigoGenero(rs.getInt("codigoGenero"));
+                nGenero.setNombreGenero(rs.getString("nombreGenero"));
+                nGenero.setOrigen(rs.getString("origen"));
+                nGenero.setDescripcion(rs.getString("descripcion"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        // Aquí cierras los recursos en el bloque finally
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+        return nGenero;
+    }
+    
     @Override
     public boolean eliminarGenero(int id) {
         String sql = "delete from Generos where codigoPersona =" + id;

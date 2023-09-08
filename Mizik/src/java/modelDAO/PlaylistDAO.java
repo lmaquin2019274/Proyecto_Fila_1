@@ -25,7 +25,7 @@ public class PlaylistDAO implements CRUDPlaylist {
 
     @Override
     public boolean agregarPlaylist(Playlist playlist) {
-        String sql = "INSERT INTO playlist(nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO playlist(nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario, imagen) VALUES (?, ?, ?, ?, ?)";
         Connection con = null;
         try {
             con = connect.getConnection();
@@ -36,6 +36,7 @@ public class PlaylistDAO implements CRUDPlaylist {
             ps.setString(2, playlist.getDescripcionPlaylist());
             ps.setInt(3, playlist.getCantidadCanciones());
             ps.setInt(4, playlist.getCodigoUsuario());
+            ps.setString(5, playlist.getImagen());
             ps.executeUpdate();
             
             con.commit();
@@ -105,14 +106,14 @@ public class PlaylistDAO implements CRUDPlaylist {
     
     @Override
     public boolean modificarPlaylist(Playlist playlist) {
-        String sql = "update playlist set nombrePlaylist = ?, descripcionPlaylist = ?, cantidadCanciones = ? where codigoPlaylist = ?";
+        String sql = "update PlayList set nombrePlaylist = ?, descripcionPlaylist = ?, imagen = ? where codigoPlaylist = ?";
         try {
             con = connect.getConnection();
             ps = con.prepareStatement(sql);
 
             ps.setString(1, playlist.getNombrePlaylist());
             ps.setString(2, playlist.getDescripcionPlaylist());
-            ps.setInt(3, playlist.getCantidadCanciones());
+            ps.setString(3, playlist.getImagen());
             ps.setInt(4, playlist.getCodigoPlaylist());
 
             ps.executeUpdate();
@@ -127,8 +128,8 @@ public class PlaylistDAO implements CRUDPlaylist {
     @Override
     public List<Playlist> listarPlaylists(int codigoUsuario) {
         List<Playlist> listarPlaylist = new ArrayList<>();
-        String sql = "SELECT p.codigoPlaylist, p.nombrePlaylist, p.descripcionPlaylist, p.codigoUsuario, COUNT(pc.codigoCancion) AS cantidadCanciones " +
-            "FROM playlist AS p " +
+        String sql = "SELECT p.codigoPlaylist, p.nombrePlaylist, p.descripcionPlaylist, p.codigoUsuario, p.imagen, COUNT(pc.codigoCancion) AS cantidadCanciones " +
+            "FROM Playlist AS p " +
             "LEFT JOIN PlaylisthasCanciones AS pc ON p.codigoPlaylist = pc.codigoPlaylist " +
             "WHERE p.codigoUsuario = ? " +
             "GROUP BY p.codigoPlaylist";
@@ -151,6 +152,7 @@ public class PlaylistDAO implements CRUDPlaylist {
                 nuevaPlaylist.setDescripcionPlaylist(rs.getString("descripcionPlaylist"));
                 nuevaPlaylist.setCantidadCanciones(rs.getInt("cantidadCanciones"));
                 nuevaPlaylist.setCodigoUsuario(rs.getInt("codigoUsuario"));
+                nuevaPlaylist.setImagen(rs.getString("imagen"));
                 listarPlaylist.add(nuevaPlaylist);
             }
         } catch (Exception e) {
@@ -179,6 +181,7 @@ public class PlaylistDAO implements CRUDPlaylist {
                 nPlaylist.setDescripcionPlaylist(rs.getString("descripcionPlaylist"));
                 nPlaylist.setCantidadCanciones(rs.getInt("cantidadCanciones"));
                 nPlaylist.setCodigoUsuario(rs.getInt("codigoUsuario"));
+                nPlaylist.setImagen(rs.getString("imagen"));
             }
         } catch (Exception e) {
             e.printStackTrace();

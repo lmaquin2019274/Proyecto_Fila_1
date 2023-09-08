@@ -52,14 +52,16 @@ public class LoginDAO implements CRUDLogin {
             }
         }
     }
-
+    
     @Override
     public boolean eliminarLogin(int id) {
-        String sql = "Call sp_EliminarLogin(" + id + ")";
+        String sql = "delete from Login where codigoLogin = ?";
         try {
             con = conect.getConnection();
-            cs = con.prepareCall(sql);
-            cs.executeUpdate();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }

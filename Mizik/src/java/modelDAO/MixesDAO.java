@@ -66,7 +66,7 @@ public class MixesDAO implements CRUDMixes {
     @Override
     public List<Mixes> listarMixes() {
         ArrayList<Mixes> listarMixes = new ArrayList<>();
-        String sql = "SELECT m.codigoMix, m.nombreMix, m.descripcionMix, m.codigoGenero, COUNT(mc.codigoCancion) AS cantidadCanciones " +
+        String sql = "SELECT m.codigoMix, m.nombreMix, m.descripcionMix, COUNT(mc.codigoCancion) AS cantidadCanciones " +
             "FROM Mixes AS m " +
             "LEFT JOIN MixeshasCanciones AS mc ON m.codigoMix = mc.codigoMix " +
             "GROUP BY m.codigoMix";
@@ -80,7 +80,6 @@ public class MixesDAO implements CRUDMixes {
                 mix.setNombreMix(rs.getString("nombreMix"));
                 mix.setDescripcionMix(rs.getString("descripcionMix"));
                 mix.setCantidadCanciones(rs.getInt("cantidadCanciones"));
-                mix.setCodigoGenero(rs.getInt("codigoGenero"));
                 listarMixes.add(mix);
             }
         } catch (Exception e) {
@@ -102,7 +101,6 @@ public class MixesDAO implements CRUDMixes {
                 mix.setNombreMix(rs.getString("nombreMix"));
                 mix.setDescripcionMix(rs.getString("descripcionMix"));
                 mix.setCantidadCanciones(rs.getInt("cantidadCanciones"));
-                mix.setCodigoGenero(rs.getInt("codigoGenero"));
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -69,3 +69,8 @@ main{
     justify-content: center;
     vertical-align: middle;
 }
+
+.dos {
+    margin-left: 30px;
+    position: fixed;
+}

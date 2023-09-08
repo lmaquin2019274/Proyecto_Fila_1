@@ -108,7 +108,7 @@ public class PlaylisthasCancionesDAO implements CRUDPlaylisthasCanciones{
             rs = ps.executeQuery();
             while (rs.next()) {
                 PlaylisthasCanciones nuevoPlaylisthasCanciones = new PlaylisthasCanciones();
-                nuevoPlaylisthasCanciones.setCodigoPlaylisthasCanciones(rs.getInt("CodigoPHC"));
+                nuevoPlaylisthasCanciones.setCodigoPlaylisthasCanciones(rs.getInt("codigoPlaylisthasCanciones"));
                 nuevoPlaylisthasCanciones.setFechaPC(rs.getDate("fechaPC"));
                 LocalDateTime localDateTime = LocalDateTime.of(LocalDate.now(), rs.getTime("horaPC").toLocalTime());
                 nuevoPlaylisthasCanciones.setNumeroUnico(rs.getInt("numeroUnico"));
@@ -121,6 +121,28 @@ public class PlaylisthasCancionesDAO implements CRUDPlaylisthasCanciones{
          return nuevoPlaylisthasCanciones;
     }
     
+    @Override
+    public PlaylisthasCanciones buscarIdPlaylisthasCanciones(int canId, int playcId) {
+        PlaylisthasCanciones nuevoPlaylisthasCanciones = null;
+        String sql = "select * from PlaylisthasCanciones where codigoCancion=" + canId + " and codigoPlaylist=" + playcId;
+        try {
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                nuevoPlaylisthasCanciones = new PlaylisthasCanciones();
+                nuevoPlaylisthasCanciones.setCodigoPlaylisthasCanciones(rs.getInt("codigoPlaylisthasCanciones"));
+                nuevoPlaylisthasCanciones.setFechaPC(rs.getDate("fechaPC"));
+                LocalDateTime localDateTime = LocalDateTime.of(LocalDate.now(), rs.getTime("horaPC").toLocalTime());
+                nuevoPlaylisthasCanciones.setNumeroUnico(rs.getInt("numeroUnico"));
+                nuevoPlaylisthasCanciones.setCodigoCancion(rs.getInt("codigoCancion"));
+                nuevoPlaylisthasCanciones.setCodigoPlaylist(rs.getInt("codigoPlaylist"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return nuevoPlaylisthasCanciones;
+    }
     
 }
 

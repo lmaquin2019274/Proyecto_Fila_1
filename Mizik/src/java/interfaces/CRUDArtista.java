@@ -9,6 +9,7 @@ import model.Canciones;
 public interface CRUDArtista {
     public List<Artistas> listarArtistas();
     public Artistas buscarArtista(int id);
+    public Artistas buscarArtistas(int id);
     public boolean eliminarArtista(int id);
     public List<Canciones> listarCanciones(int id);
 }

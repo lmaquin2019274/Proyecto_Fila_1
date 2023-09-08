@@ -9,16 +9,18 @@ public class Playlist {
     private String descripcionPlaylist;
     private int cantidadCanciones;
     private int codigoUsuario;
+    private String imagen;
 
     public Playlist() {
     }
 
-    public Playlist(int codigoPlaylist, String nombrePlaylist, String descripcionPlaylist, int cantidadCanciones, int codigoUsuario) {
+    public Playlist(int codigoPlaylist, String nombrePlaylist, String descripcionPlaylist, int cantidadCanciones, int codigoUsuario, String imagen) {
         this.codigoPlaylist = codigoPlaylist;
         this.nombrePlaylist = nombrePlaylist;
         this.descripcionPlaylist = descripcionPlaylist;
         this.cantidadCanciones = cantidadCanciones;
         this.codigoUsuario = codigoUsuario;
+        this.imagen = imagen;
     }
 
     public int getCodigoPlaylist() {
@@ -60,4 +62,13 @@ public class Playlist {
     public void setCodigoUsuario(int codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
     }
-}
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    }

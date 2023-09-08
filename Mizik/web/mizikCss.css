@@ -273,6 +273,7 @@ a.selected{
 .search-bar input[type="text"]:focus + .search-icon {
     display: none;
 }
+
 .youtube-style-icon {
     position: fixed;
     top: 10px;

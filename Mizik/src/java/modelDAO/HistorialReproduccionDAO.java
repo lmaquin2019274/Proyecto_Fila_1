@@ -7,11 +7,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import interfaces.CRUDHistorialReproduccion;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import model.HistorialReproduccion;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 
 
 public class HistorialReproduccionDAO implements CRUDHistorialReproduccion{
@@ -22,13 +25,16 @@ public class HistorialReproduccionDAO implements CRUDHistorialReproduccion{
     HistorialReproduccion nHistorialR = new HistorialReproduccion();
 
     @Override
-    public boolean agregarHistorialReproduccion(HistorialReproduccion historialReproduccion) {
-        String sql = "insert into HistorialReproduccion(fechaHR, horaHR, origen, codigoUsario, codigoCancion) values('"+nHistorialR.getFechaHR()+"', '"+nHistorialR.getHoraHR()+"', '"+nHistorialR.getOrigen()+"', '"+nHistorialR.getCodigoUsuario()+"')";
-        try{
+    public boolean agregarHistorialReproduccion(int userId, int songId) {
+        String sql = "INSERT INTO HistorialReproduccion(fechaHR, horaHR, origen, codigoUsuario, codigoCancion) VALUES (now(), now(), 'mizik', ?, ?)";
+        try {
             con = conect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.executeUpdate();
-        }catch(Exception e){
+            ps.setInt(1, userId);
+            ps.setInt(2, songId);
+            int rowsAffected = ps.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -62,9 +68,16 @@ public class HistorialReproduccionDAO implements CRUDHistorialReproduccion{
                 HistorialReproduccion hr = new HistorialReproduccion();
                 hr.setCodigoHistorialR(rs.getInt("codigoHistorialR"));
                 hr.setFechaHR(rs.getDate("fechaHR"));
-                hr.setHoraHR(LocalDateTime.MAX);
+                // Obtener la fecha y hora completa desde la base de datos
+                Timestamp fechaHoraBD = rs.getTimestamp("horaHR");
+
+                // Convertir la fecha y hora de la base de datos a LocalDateTime
+                LocalDateTime fechaHora = fechaHoraBD.toLocalDateTime();
+
+                hr.setHoraHR(fechaHora);
                 hr.setOrigen(rs.getString("Origen"));
                 hr.setCodigoUsuario(rs.getInt("codigoUsuario"));
+                hr.setCodigoCancion(rs.getInt("codigoCancion"));
                 listaHistorialReproduccion.add(hr);
              }
         } catch (Exception e) {

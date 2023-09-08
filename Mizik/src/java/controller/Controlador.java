@@ -52,6 +52,7 @@ public class Controlador extends HttpServlet {
 
     String index = "index.jsp";
     String principal = "Principal.jsp";
+    String cancion = "View/cancion.jsp";
 
     //Principal
     String favoritos = "View/favoritos.jsp";
@@ -92,6 +93,12 @@ public class Controlador extends HttpServlet {
     Usuarios nuevoUsuario = new Usuarios();
     UsuariosDAO nuevoUsuarioDAO = new UsuariosDAO();
 
+    CancionesDAO cancionesDAO = new CancionesDAO();
+    Canciones cancione = new Canciones();
+
+    LoginDAO loginDAO = new LoginDAO();
+    Login logins = new Login();
+
     Playlist play = new Playlist();
     PlaylistDAO nuevaPlaylistDAO = new PlaylistDAO();
 
@@ -115,6 +122,7 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
+        System.out.println("Esta es la accion en el processRequest: " + accion);
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
 
@@ -203,17 +211,32 @@ public class Controlador extends HttpServlet {
 
             //Principal
         } else if (action.equalsIgnoreCase("favoritos")) {
-            int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
 
-            List<Canciones> listaCancionesFavoritas = nuevoFavDAO.listarFavoritos(codigoUsuario);
+            Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
+            int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
+
+            if (codigoUsuarioObj != null && codigoUsuarioObj instanceof Integer) {
+                idUsuario = (int) codigoUsuarioObj;
+            } else {
+                request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
+            }
+
+            List<Canciones> listaCancionesFavoritas = nuevoFavDAO.listarFavoritos(idUsuario);
             request.setAttribute("canciones", listaCancionesFavoritas);
 
             acceso = favoritos;
         } else if (action.equalsIgnoreCase("biblioteca")) {
             acceso = biblioteca;
         } else if (action.equalsIgnoreCase("playlists")) {
-            int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
-            List<Playlist> playlists = nuevaPlaylistDAO.listarPlaylists(codigoUsuario);
+            Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
+            int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
+
+            if (codigoUsuarioObj != null && codigoUsuarioObj instanceof Integer) {
+                idUsuario = (int) codigoUsuarioObj;
+            } else {
+                request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
+            }
+            List<Playlist> playlists = nuevaPlaylistDAO.listarPlaylists(idUsuario);
             request.setAttribute("playlists", playlists);
             acceso = "View/listarPlaylist.jsp";
         } else if (action.equalsIgnoreCase("config")) {
@@ -411,6 +434,20 @@ public class Controlador extends HttpServlet {
             hr.setCodigoHistorialR(reproduccionId);
             hrDAO.eliminarHistorialReproduccion(reproduccionId);
             acceso = HistorialReproduccion;
+        } else if (action.equalsIgnoreCase("eliminarLogin")) {
+            int loginId = Integer.parseInt(request.getParameter("id"));
+            logins.setCodigoLogin(loginId);
+            loginDAO.eliminarLogin(loginId);
+            acceso = login;
+        } // otros
+        else if (action.equalsIgnoreCase("cancion")) {
+            int codigoCancion = Integer.parseInt(request.getParameter("id"));
+            int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
+            Canciones song = cancionesDAO.buscarCancion(codigoCancion);
+            hrDAO.agregarHistorialReproduccion(codigoUsuario, codigoCancion);
+            request.setAttribute("cancion", song);
+            request.setAttribute("usuario", codigoUsuario);
+            acceso = cancion;
         }
 
         System.out.println("Este es acceso > " + acceso);
@@ -490,6 +527,7 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String nombrePlaylist = request.getParameter("txtNombrePlaylist");
         String descripcionPlaylist = request.getParameter("txtDescripcionPlaylist");
+        String imagen = request.getParameter("txtImagenPlaylist");
         int cantidadCanciones = 1;
         int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
         Playlist nuevaPlaylist = new Playlist();
@@ -497,6 +535,7 @@ public class Controlador extends HttpServlet {
         nuevaPlaylist.setDescripcionPlaylist(descripcionPlaylist);
         nuevaPlaylist.setCantidadCanciones(cantidadCanciones);
         nuevaPlaylist.setCodigoUsuario(codigoUsuario);
+        nuevaPlaylist.setImagen(imagen);
         boolean exito = nuevaPlaylistDAO.agregarPlaylist(nuevaPlaylist);
         if (exito) {
             response.sendRedirect("Controlador?accion=playlists");
@@ -515,7 +554,7 @@ public class Controlador extends HttpServlet {
         PlaylisthasCanciones playhasCanciones = new PlaylisthasCanciones();
         playhasCanciones.setCodigoPlaylist(playlistId);
         playhasCanciones.setCodigoCancion(cancionId);
-        boolean exito = playhasCancionesDAO.agregarPlaylisthasCanciones(playhasCanciones);
+        boolean exito = playcDAO.agregarPlaylisthasCanciones(playhasCanciones);
         if (exito) {
             response.sendRedirect("Controlador?accion=playlist&id=" + playlistId);
             System.out.println("Se agregó la canción");
@@ -541,8 +580,27 @@ public class Controlador extends HttpServlet {
         response.sendRedirect("index.jsp");
     }
 
+    private void agregarFavorito(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int idCancion = Integer.parseInt(request.getParameter("idCancion"));
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+
+        FavoritosDAO favDAO = new FavoritosDAO();
+        favDAO.agregarFavoritos(idUsuario, idCancion);
+
+    }
+
+    private void eliminarFavorito(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int idCancion = Integer.parseInt(request.getParameter("idCancion"));
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+
+        FavoritosDAO favDAO = new FavoritosDAO();
+        favDAO.eliminarFavoritos(idCancion, idUsuario);
+
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("LLEGA LA METODO POSTO ALMENOS");
         request.setCharacterEncoding("UTF-8");
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
@@ -618,7 +676,8 @@ public class Controlador extends HttpServlet {
                 UsuariosDAO usuarioDAO = new UsuariosDAO();
 
                 switch (accion) {
-                    case "Subir":
+                    case "SubirFoto":
+                        System.out.println("Llega al metodo de Subir");
                         Part filePart = request.getPart("imagen");
                         InputStream img = filePart.getInputStream();
                         System.out.println("Osea Si entra pe: " + codUsuario + " " + img);

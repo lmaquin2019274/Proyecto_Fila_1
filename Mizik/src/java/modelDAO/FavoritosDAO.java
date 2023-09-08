@@ -20,16 +20,13 @@ public class FavoritosDAO implements CRUDFavoritos{
     Favoritos nuevoFavorito = new Favoritos();
 
     @Override
-    public boolean agregarFavoritos(Favoritos favoritos) {
-        String sql = "insert into Favoritos(cantidadCanciones, duracionTotal, cantidadArtistas, codigoUsario, codigoCancion) values (?, ?, ?, ?, ?)";
+    public boolean agregarFavoritos(int idUsuario, int idCancion) {
+        String sql = "insert into Favoritos(cantidadCanciones, duracionTotal, cantidadArtistas, codigoUsuario, codigoCancion) values (1, 1, 1, ?, ?)";
         try {
             con = conect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, favoritos.getCantidadCanciones());
-            ps.setString(2, favoritos.getDuracionTotal());
-            ps.setInt(3, favoritos.getCantidadArtistas());
-            ps.setInt(4, favoritos.getCodigoUsario());
-            ps.setInt(5, favoritos.getCodigoCancion());
+            ps.setInt(1, idUsuario);
+            ps.setInt(2, idCancion);
             ps.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -39,12 +36,13 @@ public class FavoritosDAO implements CRUDFavoritos{
     }
 
     @Override
-    public boolean eliminarFavoritos(int id) {
-        String sql = "delete from Favoritos where codigoFav = ?";
+    public boolean eliminarFavoritos(int idCancion, int idUser) {
+        String sql = "delete from Favoritos where codigoCancion = ? and codigoUsuario = ?";
         try {
             con = conect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, idCancion);
+            ps.setInt(2, idUser);
             ps.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -58,33 +56,37 @@ public class FavoritosDAO implements CRUDFavoritos{
         List<Canciones> listaCancionesFavoritas = new ArrayList<>();
         String sql = "SELECT c.* FROM Favoritos f INNER JOIN Canciones c ON f.codigoCancion = c.codigoCancion WHERE f.codigoUsuario = ?";
 
-        try (Connection con = conect.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, codigoUsuario);
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    Canciones cancion = new Canciones();
-                    cancion.setCodigoCancion(rs.getInt("codigoCancion"));
-                    cancion.setNombreCancion(rs.getString("nombreCancion"));
-                    cancion.setDuracion(rs.getString("duracion"));
-                    cancion.setCodigoGenero(rs.getInt("codigoGenero"));
-                    cancion.setCodigoArtista(rs.getInt("codigoArtista"));
-                    cancion.setCodigoAlbum(rs.getInt("codigoAlbum"));
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
-                    listaCancionesFavoritas.add(cancion);
-                }
+        try {
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, codigoUsuario);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Canciones cancion = new Canciones();
+                cancion.setCodigoCancion(rs.getInt("codigoCancion"));
+                cancion.setNombreCancion(rs.getString("nombreCancion"));
+                cancion.setDuracion(rs.getString("duracion"));
+                cancion.setCodigoGenero(rs.getInt("codigoGenero"));
+                cancion.setCodigoArtista(rs.getInt("codigoArtista"));
+                cancion.setCodigoAlbum(rs.getInt("codigoAlbum"));
+
+                listaCancionesFavoritas.add(cancion);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return listaCancionesFavoritas;
     }
 
 
     @Override
-    public Favoritos buscarFavoritos(int id) {
-        String sql = "select * from Favoritos where codigoFavorito=" + id;
+    public Favoritos buscarFavoritos(int idCancion, int idUsuario) {
+        String sql = "select * from Favoritos where codigoCancion=" + idCancion +" and codigoUsuario="+ idUsuario;
         try {
             con = conect.getConnection();
             ps = con.prepareStatement(sql);

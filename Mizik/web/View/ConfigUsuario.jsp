@@ -21,7 +21,7 @@
                         <label for="imagen">Selecciona una imagen:</label>
                         <input type="file" class="form-control-file" name="imagen" id="imagen">
                     </div>
-                    <input type="submit" name="accion" value="Subir" class="btn-submit">
+                    <input name="accion" value="SubirFoto" class="btn-submit" type="submit">
                 </form>
             </div>
         </div>

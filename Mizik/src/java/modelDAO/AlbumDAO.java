@@ -7,6 +7,7 @@ import interfaces.CRUDAlbum;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Album;
@@ -62,10 +63,44 @@ public class AlbumDAO implements CRUDAlbum{
         }catch(Exception e){
             e.printStackTrace();
         }
-        
         return nuevoAlbum;
     }
 
+    @Override
+    public Album buscarAlbumes(int id) {
+        String sql = "select * from Album where codigoAlbum=" +id;
+        try{
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                nuevoAlbum.setCodigoAlbum(rs.getInt("codigoAlbum"));
+                nuevoAlbum.setNombreAlbum(rs.getString("nombreAlbum"));
+                nuevoAlbum.setGeneroComun(rs.getString("generoComun"));
+                nuevoAlbum.setFechaLanzamiento(rs.getDate("fechaLanzamiento"));
+                nuevoAlbum.setCodigoArtista(rs.getInt("codigoArtista"));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        } finally {
+        // Aquí cierras los recursos en el bloque finally
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+        return nuevoAlbum;
+    }
+    
     @Override
     public boolean eliminarAlbum(int id) {
         String sql = "delete from Album where codigoAlbum" + id;

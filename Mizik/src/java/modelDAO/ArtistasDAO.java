@@ -7,6 +7,7 @@ import interfaces.CRUDArtista;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Artistas;
@@ -63,6 +64,40 @@ public class ArtistasDAO implements CRUDArtista {
         return nArtistas;
     }
 
+    @Override
+    public Artistas buscarArtistas(int id) {
+        String sql = "select * from Artista where codigoArtista=" + id;
+        try {
+            con = conect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next())
+            {
+                nArtistas.setCodigoArtista(rs.getInt("codigoArtista"));
+                nArtistas.setNombreArtista(rs.getString("nombreArtista"));
+                nArtistas.setFechaNacimiento(rs.getDate("fechaNacimiento"));
+                nArtistas.setPaisNacimiento(rs.getString("paisNacimiento"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+        return nArtistas;
+    }
+    
     @Override
     public boolean eliminarArtista(int id) {
         String sql = "delete from Artista where codigoArtista" + id;

@@ -9,6 +9,7 @@ import model.Canciones;
 public interface CRUDAlbum {
     public List<Album> listarAlbumes();
     public Album buscarAlbum(int id);
+    public Album buscarAlbumes(int id);
     public boolean eliminarAlbum(int id);
     public List<Canciones> listarCanciones(int id);
 }

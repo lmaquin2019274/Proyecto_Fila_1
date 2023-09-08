@@ -14,55 +14,70 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Configuración</title>
+        <link rel="shortcut icon" type="image/x-icon" href="img/opciones.ico" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/bb229f5329.js" crossorigin="anonymous"></script>
+        <title>Opciones</title>
     </head>
-    <body>
-        <h1>Historial de Búsquedas</h1>
-        <a href="Controlador?accion=principal">🢀</a><br>
-        <table border="4">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Palabra</th>
-                    <th>Usuario</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <%
-                HistorialBusquedaDAO dao = new HistorialBusquedaDAO();
-                List<HistorialBusqueda> listaHistorialReproduccion = dao.listarHistorialBusqueda(codigoUsuario);
-                Iterator<HistorialBusqueda> iterator = listaHistorialReproduccion.iterator();
-                HistorialBusqueda fav = null;
-                while (iterator.hasNext()){
-                    fav = iterator.next();
+    <body class="text-center">
+        <div class="container">
 
-            %>
-            <tbody>
-                <tr>
-                    <td><%= fav.getCodigoHistorialB()%></td>
-                    <td><%= fav.getFechaHB()%></td>
-                    <td><%= fav.getHoraHB()%></td>
-                    <td><%= fav.getPalabraBuscada()%></td>
-                    <td><%= fav.getCodigoUsuario()%></td>
-                    <td>
-                        <a href="#" onclick="confirmarEliminacion(<%= fav.getCodigoHistorialB()%>)">Eliminar</a>
-                    </td>  
-                </tr>
-                <%}%>
-                <script>
-                    function confirmarEliminacion(busquedaId) {
-                        var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta búsqueda?");
-                        if (confirmacion) {
-                            window.location.href = "Controlador?accion=eliminarBusqueda&id=" + busquedaId;
-                        } else {
-                            // El usuario canceló la eliminación, no se hace nada.
-                        }
-                    }
-                </script>
-            </tbody>
-        </table>
-    </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <img src="img/search.jpg" alt="200" width="200" style="margin-top: 20px"/><br>
+
+                    <h3 class="mt-3 text-muted" style="font-size: 20px">
+                        Historial de búsquedas
+                    </h3>
+
+                    <a href="Controlador?accion=principal">
+                        <i class="fa-solid fa-circle-left fa-xl" style="color: #6c6c6c;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center">Id</th>
+                                <th style="text-align: center">Fecha</th>
+                                <th style="text-align: center">Hora</th>
+                                <th style="text-align: center">Palabra</th>
+                                <th style="text-align: center">Usuario</th>
+                                <th style="text-align: center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <%
+                            HistorialBusquedaDAO dao = new HistorialBusquedaDAO();
+                            List<HistorialBusqueda> listaHistorialBusqueda = dao.listarHistorialBusqueda(codigoUsuario);
+                            Iterator<HistorialBusqueda> iterator = listaHistorialBusqueda.iterator();
+                            HistorialBusqueda fav = null;
+                            while (iterator.hasNext()) {
+                                fav = iterator.next();
+                        %>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center"><%= fav.getCodigoHistorialB()%></td>
+                                <td style="text-align: center"><%= new java.text.SimpleDateFormat("d · MMM · yyyy").format(fav.getFechaHB())%></td>
+                                <td style="text-align: center"><%= fav.getHoraHB().format(java.time.format.DateTimeFormatter.ofPattern("h.mm a"))%></td>
+                                <td style="text-align: center"><%= fav.getPalabraBuscada()%></td>
+                                <td style="text-align: center"><%= fav.getCodigoUsuario()%></td>
+                                <td style="text-align: center">
+                                    <a href="Controlador?accion=eliminarBusqueda&id=<%= fav.getCodigoHistorialB()%>">
+                                        <i class="fa-solid fa-trash" style="color: #9d1c28;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

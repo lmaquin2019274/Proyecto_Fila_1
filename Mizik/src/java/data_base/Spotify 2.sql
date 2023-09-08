@@ -61,10 +61,7 @@ Create table Mixes(
     nombreMix varchar(30) not null,
     descripcionMix varchar(200) not null,
     cantidadCanciones int not null,
-    codigoGenero int not null,
-    Primary key PK_codigoMix (codigoMix),
-    constraint FK_Mixes_Generos foreign key
-		(codigoGenero) references Generos(codigoGenero) on update cascade on delete cascade
+    Primary key PK_codigoMix (codigoMix)
 );
 
 Create table PlayList(
@@ -73,6 +70,7 @@ Create table PlayList(
     descripcionPlaylist varchar(200),
     cantidadCanciones int not null,
     codigoUsuario int not null,
+    imagen varchar(30) not null,
     Primary key PK_codigoPlaylist (codigoPlaylist),
 	constraint FK_Playlist_Usuario foreign key
 		(codigoUsuario) references Usuarios(codigoUsuario) on update cascade on delete cascade
@@ -202,7 +200,7 @@ values('3.0','Salsa','2013-07-23',1);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
 values('Amar sin mentiras','Salsa','2004-06-08',1);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('+','Pop, Folk','2011-09-09',2);
+values('Plus','Pop, Folk','2011-09-09',2);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
 values('X','Pop, R&B','2014-06-20',2);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
@@ -547,20 +545,30 @@ insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigo
 values('De Que Manera Te Olvido ','deQueManeraTeOlvido .mp3','3:14',6,5,15);
 
 
-INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones, codigoGenero)
-VALUES ('Mix Pop Latino', 'Mezcla de éxitos pop latino', 10, 1);
-INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones, codigoGenero)
-VALUES ('Mix Rock Clásico', 'Clásicos del rock en una sola lista', 8, 2);
-INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones, codigoGenero)
-VALUES ('Mix Hip-Hop Old School', 'Los mejores temas del hip-hop de antaño', 7, 3);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Blanco', 'Es una mezcla de diferentes canciones, donde el usuario se pondrá cómodo con diferentes géneros y canciones', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Negro', 'Cuando piensas en un mix, atrevete a escuchar esta creación de música ideal para ti', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Rojo', 'Es momento de que tus oidos se relajen y te transporten a un paisaje de canciones y de diferentes aritistas', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Azul','Sumérgete en un emocionante viaje sonoro que abarca una amplia gama de géneros musicales',15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Amarillo','Este mix te lleva a través de un emocionante mundo de sonidos donde cada canción es una sorpresa',15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Verde',' Descubre la magia de la música en su máxima expresión mientras este mix fusiona sin esfuerzo diferentes géneros y estilos',15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Café', 'Como un mosaico de colores y texturas, este mix reúne una diversidad de canciones que van desde lo suave hasta lo explosivo', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Gris', 'Una selección de canciones que trasciende las barreras culturales y lingüísticas, uniendo a personas de todo el mundo a través de la música', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Rosa', 'Sumérgete en un caleidoscopio de emociones y sonidos mientras esta playlist te lleva en un recorrido musical impredecible', 15);
+INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
+VALUES ('Morado', 'Experimenta la riqueza de la música en todas sus formas con esta ecléctica selección', 15);
 
 
-INSERT INTO PlayList (nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario)
-VALUES ('Mis Favoritas', 'Mis canciones favoritas de todos los géneros', 1, 1);
-INSERT INTO PlayList (nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario)
-VALUES ('Entrenamiento', 'Música para motivarse durante el entrenamiento', 1, 1);
-INSERT INTO PlayList (nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario)
-VALUES ('Relaxing Vibes', 'Canciones relajantes para desconectar', 1, 1);
+INSERT INTO PlayList (nombrePlaylist, descripcionPlaylist, cantidadCanciones, codigoUsuario, imagen)
+VALUES ('Relaxing Vibes', 'Canciones relajantes para desconectar', 1, 1, 'extraterrestre.png');
 
 
 INSERT INTO Favoritos (cantidadCanciones, duracionTotal, cantidadArtistas, codigoUsuario, codigoCancion)
@@ -598,18 +606,327 @@ VALUES ('2023-07-19', now(), 'Relaxing Vibes', 1, 15);
 INSERT INTO PlaylisthasCanciones (fechaPC, horaPC, numeroUnico, codigoCancion, codigoPlaylist)
 VALUES ('2023-07-21', now(), 1, 3, 1);
 INSERT INTO PlaylisthasCanciones (fechaPC, horaPC, numeroUnico, codigoCancion, codigoPlaylist)
-VALUES ('2023-07-20', now(), 2, 7, 2);
+VALUES ('2023-07-20', now(), 2, 7, 1);
 INSERT INTO PlaylisthasCanciones (fechaPC, horaPC, numeroUnico, codigoCancion, codigoPlaylist)
-VALUES ('2023-07-19', now(), 3, 15, 3);
+VALUES ('2023-07-19', now(), 3, 15, 1);
+
 
 
 INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
-VALUES ('2023-07-21', now(), 1, 2, 1);
+VALUES ('2023-07-21', now(), 1, 33, 1);
 INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
-VALUES ('2023-07-20', now(), 2, 12, 2);
+VALUES ('2023-07-20', now(), 2, 62, 1);
 INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
-VALUES ('2023-07-19', now(), 3, 4, 3);
+VALUES ('2023-07-19', now(), 3, 32, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4, 90, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 5, 2, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 6, 128, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 7, 9, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 8, 66, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 9, 127, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 10, 69, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 11, 91, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 12, 31, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 13, 36, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 14, 65, 1);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 15, 40, 1);
 
-Update Usuarios set fotoPerfil = 'ay' where codigoUsuario = 2
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 1, 129, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 2, 94, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 3, 125, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4, 35, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 5, 121, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 6, 1, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 7, 120, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 8, 64, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 9, 99, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 10, 37, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 11, 123, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 12, 68, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 13, 93, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-20', now(), 14, 4, 2);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 15, 97, 2);
 
-select * from Usuarios;
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 1, 67, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 2, 3, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 3, 124, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 4, 92, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 5, 122, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 6, 63, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 7, 39, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 8, 6, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 9, 8, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 10, 126, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 11, 38, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 12, 5, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 13, 98, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 14, 7, 3);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 15, 60, 3);
+
+-- Canciones Mix 4
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,11 , 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,12, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,13, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,41 , 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,42, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,43, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,70, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,71, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,72, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,100, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,101, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,102, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,130, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,131, 4);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 4,132, 4);
+
+-- Canciones Mix 5
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,14, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,15, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,16, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,44, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,45, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,46, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,73, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,74, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,75, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,103, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,104, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,105, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,133, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,134, 5);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 5,135, 5);
+
+-- Canciones Mix 6
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,17, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,18, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,19, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,47, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,48, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,49, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,76, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,77, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,78, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,106, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,107, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,108, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,136, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,137, 6);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-21', now(), 6,138, 6);
+
+-- Mix 7 --
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-01-06', now(), 7, 21, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-04', now(), 7, 22, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-02-10', now(), 7, 23, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-04-18', now(), 7, 24, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-08-17', now(), 7, 25, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-04-24', now(), 7, 51, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-06-25', now(), 7, 52, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-28', now(), 7, 53, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-02-27', now(), 7, 54, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-03-18', now(), 7, 55, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-17', now(), 7, 81, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-26', now(), 7, 82, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-31', now(), 7, 83, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-08-29', now(), 7, 84, 7);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-01', now(), 7, 85, 7);
+
+-- Mix 8 --
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-01-19', now(), 8, 26, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-04-22', now(), 8, 27, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-05-13', now(), 8, 28, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-14', now(), 8, 29, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-06-15', now(), 8, 30, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-03-25', now(), 8, 56, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-04', now(), 8, 57, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-09-05', now(), 8, 58, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-08-11', now(), 8, 59, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-17', now(), 8, 60, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-12-18', now(), 8, 86, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-10-19', now(), 8, 87, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-31', now(), 8, 88, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-10-22', now(), 8, 89, 8);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-04-23', now(), 8, 90, 8);
+
+-- Mix 9 --
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-01', now(), 9, 111, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-08', now(), 9, 112, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-07', now(), 9, 113, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-16', now(), 9, 114, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-15', now(), 9, 115, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-14', now(), 9, 141, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-18', now(), 9, 142, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-19', now(), 9, 143, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-17', now(), 9, 144, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-15', now(), 9, 145, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-10', now(), 9, 146, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-04', now(), 9, 147, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-03', now(), 9, 148, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-02', now(), 9, 149, 9);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-01', now(), 9, 150, 9);
+
+-- Mix 10 --
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-08-1', now(), 10, 6, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-10-9', now(), 10, 28, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-02-28', now(), 10, 130, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-03-19', now(), 10, 78, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-04-30', now(), 10, 69, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-05-30', now(), 10, 95, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-06-08', now(), 10, 82, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-07-06', now(), 10, 8, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-08-10', now(), 10, 10, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-09-11', now(), 10, 3, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-10-12', now(), 10, 44, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-02-13', now(), 10, 55, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-12-14', now(), 10, 66, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-01-15', now(), 10, 85, 10);
+INSERT INTO MixeshasCanciones (fechaMC, horaMC, numeroUnico, codigoCancion, codigoMix)
+VALUES ('2023-06-16', now(), 10, 69, 10);
+
+select * from Playlist;

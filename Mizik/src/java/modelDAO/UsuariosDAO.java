@@ -21,7 +21,7 @@ public class UsuariosDAO implements CRUDUsuarios {
     Usuarios nuevoUsuarios = new Usuarios();
     private static String userActual;
     private static String contraseniaActual;
-
+    
     @Override
     public boolean agregarUsuario(Usuarios usuario) {
         String sql = "INSERT INTO Usuarios(nombreCompleto, usuario, correoUsuario, claveUsuario) VALUES (?, ?, ?, ?)";
@@ -153,14 +153,14 @@ public class UsuariosDAO implements CRUDUsuarios {
 
         return user;
     }
-
-    public void setDatosActuales(String u, String c) {
+    
+    public void setDatosActuales(String u, String c){
         userActual = u;
         contraseniaActual = c;
     }
-
+    
     // Para retornar el id del usuario activo
-    public int datosActuales() {
+    public int datosActuales(){
         int id;
         Usuarios user = new Usuarios(); // Inicializamos user como null
         // String para la consulta
@@ -185,7 +185,7 @@ public class UsuariosDAO implements CRUDUsuarios {
         id = user.getCodigoUsuario();
         return id;
     }
-
+    
     @Override
     public Usuarios buscarUsuarioNombre(String user) {
         String sql = "SELECT * FROM Usuarios WHERE usuario = ?";
@@ -211,7 +211,7 @@ public class UsuariosDAO implements CRUDUsuarios {
 
         return nuevoUsuarios;
     }
-
+    
     public void agregarFotoPerfil(int codigoUsuario, InputStream img) {
 
         String sql = "Update Usuarios set fotoPerfil = ? where codigoUsuario = ?";
@@ -241,5 +241,4 @@ public class UsuariosDAO implements CRUDUsuarios {
         }
         return rs;
     }
-
 }

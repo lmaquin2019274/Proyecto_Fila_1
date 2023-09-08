@@ -10,4 +10,5 @@ public interface CRUDPlaylisthasCanciones {
     public boolean eliminarPlaylisthasCanciones(int id);
     public List<PlaylisthasCanciones> listarPlaylisthasCanciones();
     public PlaylisthasCanciones buscarPlaylisthasCanciones(int id);
+    public PlaylisthasCanciones buscarIdPlaylisthasCanciones(int canId, int playcId);
 }

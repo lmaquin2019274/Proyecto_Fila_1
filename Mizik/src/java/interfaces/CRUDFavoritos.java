@@ -7,8 +7,8 @@ import model.Canciones;
 import model.Favoritos;
 
 public interface CRUDFavoritos {
-    public boolean agregarFavoritos(Favoritos favoritos);
-    public boolean eliminarFavoritos(int id);
+    public boolean agregarFavoritos(int idUsuario, int idCancion);
+    public boolean eliminarFavoritos(int idCancion, int idUser);
     public List<Canciones> listarFavoritos(int codigoUsuario);
-    public Favoritos buscarFavoritos(int id);
+    public Favoritos buscarFavoritos(int idCancion, int idUsuario);
 }

@@ -34,7 +34,7 @@
 
             </div>
             <div class="youtube-style-icon">
-                <img src="data:image/png;base64,<%= new String(Base64.getEncoder().encode((byte[]) request.getAttribute("imgUser")))%>" alt="fotoDePerfil" class="youtube-style-icon"> 
+                <img src="data:image/png;base64,<%= new String(Base64.getEncoder().encode((byte[]) request.getAttribute("imgUser")))%>" alt="fotoDePerfil" class="youtube-style-icon">
             </div>
 
         </header>
@@ -72,12 +72,39 @@
                         <h4>Opciones</h4>
                     </div>
                 </a>
+                
+                <a href="#" id="tienda-tab">
+                    <div class="option">
+                        <i class="fa-solid fa-gear" style="color: #f7c607;" title="Tienda"></i>
+                        <h4>Tienda</h4>
+                    </div>
+                </a>
             </div>
         </div>
 
         <main>
             <div id="inicio">
-                <h1>Buenos días</h1>
+                <h1>
+                    <span id="sol" class="fa-fw fa-lg"><i class="fa-solid fa-sun" style="color: #fad70e;"></i></span>
+                    <span id="saludo">Buenos días</span>
+                </h1>
+
+                  <script>
+                    const h1Element = document.getElementById("saludo");
+                    const solElement = document.getElementById("sol");
+
+                    const horaActual = new Date().getHours();
+
+                    if (horaActual >= 0 && horaActual < 12) {
+                      h1Element.textContent = "Buenos días";
+                    } else if (horaActual >= 12 && horaActual < 19) {
+                      h1Element.textContent = "Buenas tardes";
+                      solElement.innerHTML = '<i class="fa-solid fa-cloud" style="color: #9ab0da;"></i>';
+                    } else {
+                      h1Element.textContent = "Buenas noches";
+                      solElement.innerHTML = '<i class="fa-solid fa-moon" style="color: #572981;"></i>';
+                    }
+                  </script>
                 <div class="image_biblioteca">
                     <div class="content_biblioteca">
                         <a href="Controlador?accion=mixes">
@@ -129,7 +156,6 @@
                     </div>
                     <a class="link" href="Controlador?accion=biblioteca">Otros</a>
                 </div>
-
             </div>
             <div id="buscar" style="display: none;">
                 <h1>Buscar</h1>
@@ -210,6 +236,33 @@
 
 
                 <a class="link_nosotros" href="Controlador?accion=config">Sobre nosotros</a><br>
+            </div>
+            <div id="tienda" style="display: none;">
+                <h1>Tienda</h1>
+                <div class="image_biblioteca">
+                    <div class="content_biblioteca">
+                        <a href="Controlador?accion=favoritos">
+                            <i class="fa-solid fa-heart" style="color: #cc0005;"></i>
+                        </a>
+                    </div>
+                    <a class="link" href="Controlador?accion=favoritos">Tus favoritos</a>
+                </div>
+                <div class="image_biblioteca">
+                    <div class="content_biblioteca">
+                        <a href="Controlador?accion=playlists">
+                            <i class="fa-solid fa-music" style="color: #f5c607;"></i>
+                        </a>
+                    </div>
+                    <a class="link" href="Controlador?accion=playlists">Tus playlist</a>
+                </div>
+                <div class="image_biblioteca">
+                    <div class="content_biblioteca">
+                        <a href="Controlador?accion=biblioteca">
+                            <i class="fa-solid fa-sliders" style="color: #606060;"></i>
+                        </a>
+                    </div>
+                    <a class="link" href="Controlador?accion=biblioteca">Otros</a>
+                </div>
             </div>
         </main>
 
