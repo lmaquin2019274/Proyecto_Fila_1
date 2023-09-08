@@ -55,7 +55,7 @@ public class Validar extends HttpServlet {
                 if (user != null) {
                     // Usuario válido, redirigir a la página principal
                     request.setAttribute("usuario", user);
-                    request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Principal&codUsuario=" + user.getCodigoUsuario()).forward(request, response);
                 } else {
                     // Usuario o contraseña incorrectos, mostrar mensaje de error en la página index.jsp
                     request.setAttribute("error", "Usuario o contraseña incorrectos");

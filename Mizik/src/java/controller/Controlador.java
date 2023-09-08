@@ -77,49 +77,58 @@ public class Controlador extends HttpServlet {
     String HistorialReproduccion = "View/historialReproduccion.jsp";
     String historialBusqueda = "View/historialBusqueda.jsp";
     String login = "View/login.jsp";
-    String expirado = "View/expirado.jsp";
     String configPerfil = "View/ConfigUsuario.jsp";
 
     //Add
-    String addFavoritos = "View/Add/addFavoritos.jsp";
     String addUsuario = "View/Add/addUsuario.jsp";
     String addUsuarioD = "View/Add/addUsuarioD.jsp";
     String addPlaylist = "View/Add/addPlaylist.jsp";
     String addCancionesPlaylist = "View/Add/addCancionesPlaylist.jsp";
-    
+
+    //Edit
+    String editPlaylist = "View/Add/editPlaylist.jsp";
+    String editUsuario = "View/Add/addUsuario.jsp";
+
     ArtistasDAO artistaDAO = new ArtistasDAO();
     AlbumDAO albumDAO = new AlbumDAO();
     GeneroDAO generoDAO = new GeneroDAO();
 
     Usuarios nuevoUsuario = new Usuarios();
     UsuariosDAO nuevoUsuarioDAO = new UsuariosDAO();
-    
+
     CancionesDAO cancionesDAO = new CancionesDAO();
     Canciones cancione = new Canciones();
-    
+
+    LoginDAO loginDAO = new LoginDAO();
+    Login logins = new Login();
+
     Playlist play = new Playlist();
     PlaylistDAO nuevaPlaylistDAO = new PlaylistDAO();
-    
+
     PlaylisthasCanciones playc = new PlaylisthasCanciones();
     PlaylisthasCancionesDAO playcDAO = new PlaylisthasCancionesDAO();
-    
+
     HistorialBusqueda hb = new HistorialBusqueda();
     HistorialBusquedaDAO hbDAO = new HistorialBusquedaDAO();
-    
+
     HistorialReproduccion hr = new HistorialReproduccion();
     HistorialReproduccionDAO hrDAO = new HistorialReproduccionDAO();
-    
+
     Favoritos nuevoFav = new Favoritos();
     FavoritosDAO nuevoFavDAO = new FavoritosDAO();
-    
+
     static int codUsuario;
+
+    PlaylisthasCancionesDAO playhasCancionesDAO = new PlaylisthasCancionesDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
+        System.out.println("Esta es la accion en el processRequest: " + accion);
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
+
         }
     }
 
@@ -128,9 +137,10 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String acceso = "";
         String action = request.getParameter("accion");
+        String op;
 
         if (action.equalsIgnoreCase("principal")) {
-            
+
             UsuariosDAO usuario = new UsuariosDAO();
             boolean x = false;
 
@@ -196,14 +206,15 @@ public class Controlador extends HttpServlet {
                 }
 
             }
-            
+
             acceso = principal;
+
         } else if (action.equalsIgnoreCase("index")) {
             acceso = index;
 
             //Principal
         } else if (action.equalsIgnoreCase("favoritos")) {
-            
+
             Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
             int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
 
@@ -212,10 +223,10 @@ public class Controlador extends HttpServlet {
             } else {
                 request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
             }
-            
+
             List<Canciones> listaCancionesFavoritas = nuevoFavDAO.listarFavoritos(idUsuario);
             request.setAttribute("canciones", listaCancionesFavoritas);
-            
+
             acceso = favoritos;
         } else if (action.equalsIgnoreCase("biblioteca")) {
             acceso = biblioteca;
@@ -234,7 +245,7 @@ public class Controlador extends HttpServlet {
         } else if (action.equalsIgnoreCase("config")) {
             acceso = config;
         } else if (action.equalsIgnoreCase("mixes")) {
-            
+
             acceso = mixes;
 
             // Playlists, mixes, artistas, álbumes y géneros
@@ -259,8 +270,8 @@ public class Controlador extends HttpServlet {
 
             request.setAttribute("playlist", playlist);
             request.setAttribute("canciones", listaCanciones);
-            System.out.println("playlist: "+playlist);
-            System.out.println("canciones: "+listaCanciones);
+            System.out.println("playlist: " + playlist);
+            System.out.println("canciones: " + listaCanciones);
 
             String playlistJsp = "View/playlist.jsp";
             acceso = playlistJsp;
@@ -285,62 +296,62 @@ public class Controlador extends HttpServlet {
 
             request.setAttribute("mix", mix);
             request.setAttribute("canciones", listaCanciones);
-            System.out.println("canciones: "+listaCanciones);
-            
+            System.out.println("canciones: " + listaCanciones);
+
             String mixJsp = "View/mix.jsp";
             acceso = mixJsp;
 
         } else if (action.equalsIgnoreCase("artista")) {
             int codigoArtista = Integer.parseInt(request.getParameter("id"));
             Artistas artista = artistaDAO.buscarArtista(codigoArtista);
-            
+
             CancionesDAO cancionesDAO = new CancionesDAO();
             List<Canciones> listaCanciones = artistaDAO.listarCanciones(codigoArtista);
 
             List<Canciones> nuevasCanciones = new ArrayList<>();
-                for (Canciones can : listaCanciones) {
-                    int codigoCancion = can.getCodigoCancion();
-                    Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
-                    nuevasCanciones.add(cancion);
-                }
-                listaCanciones.addAll(nuevasCanciones);
-            
+            for (Canciones can : listaCanciones) {
+                int codigoCancion = can.getCodigoCancion();
+                Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
+                nuevasCanciones.add(cancion);
+            }
+            listaCanciones.addAll(nuevasCanciones);
+
             request.setAttribute("artista", artista);
             request.setAttribute("canciones", listaCanciones);
             acceso = "View/Canciones/artista.jsp";
         } else if (action.equalsIgnoreCase("album")) {
             int codigoAlbum = Integer.parseInt(request.getParameter("id"));
             Album album = albumDAO.buscarAlbum(codigoAlbum);
-            
+
             CancionesDAO cancionesDAO = new CancionesDAO();
             List<Canciones> listaCanciones = albumDAO.listarCanciones(codigoAlbum);
 
             List<Canciones> nuevasCanciones = new ArrayList<>();
-                for (Canciones can : listaCanciones) {
-                    int codigoCancion = can.getCodigoCancion();
-                    Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
-                    nuevasCanciones.add(cancion);
-                }
-                listaCanciones.addAll(nuevasCanciones);
-            
+            for (Canciones can : listaCanciones) {
+                int codigoCancion = can.getCodigoCancion();
+                Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
+                nuevasCanciones.add(cancion);
+            }
+            listaCanciones.addAll(nuevasCanciones);
+
             request.setAttribute("album", album);
             request.setAttribute("canciones", listaCanciones);
             acceso = "View/Canciones/album.jsp";
         } else if (action.equalsIgnoreCase("generoCancion")) {
             int codigoGenero = Integer.parseInt(request.getParameter("id"));
             Generos genero = generoDAO.buscarGenero(codigoGenero);
-            
+
             CancionesDAO cancionesDAO = new CancionesDAO();
             List<Canciones> listaCanciones = albumDAO.listarCanciones(codigoGenero);
 
             List<Canciones> nuevasCanciones = new ArrayList<>();
-                for (Canciones can : listaCanciones) {
-                    int codigoCancion = can.getCodigoCancion();
-                    Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
-                    nuevasCanciones.add(cancion);
-                }
-                listaCanciones.addAll(nuevasCanciones);
-            
+            for (Canciones can : listaCanciones) {
+                int codigoCancion = can.getCodigoCancion();
+                Canciones cancion = cancionesDAO.buscarCancion(codigoCancion);
+                nuevasCanciones.add(cancion);
+            }
+            listaCanciones.addAll(nuevasCanciones);
+
             request.setAttribute("genero", genero);
             request.setAttribute("canciones", listaCanciones);
             acceso = "View/Canciones/genero.jsp";
@@ -364,7 +375,7 @@ public class Controlador extends HttpServlet {
         else if (action.equalsIgnoreCase("listarUsuarios")) {
             acceso = listarUsuarios;
         } else if (action.equalsIgnoreCase("HistorialReproduccion")) {
-            acceso = HistorialReproduccion;
+
             Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
             int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
 
@@ -373,11 +384,12 @@ public class Controlador extends HttpServlet {
             } else {
                 request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
             }
+
             List<HistorialReproduccion> historialReproduccion = hrDAO.listarHistorialReproduccion(idUsuario);
             request.setAttribute("historialReproduccion", historialReproduccion);
             acceso = "View/historialReproduccion.jsp";
         } else if (action.equalsIgnoreCase("historialBusqueda")) {
-            acceso = historialBusqueda;
+
             Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
             int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
 
@@ -386,22 +398,24 @@ public class Controlador extends HttpServlet {
             } else {
                 request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
             }
+
             List<HistorialBusqueda> historialBusqueda = hbDAO.listarHistorialBusqueda(idUsuario);
             request.setAttribute("historialBusqueda", historialBusqueda);
             acceso = "View/historialBusqueda.jsp";
         } else if (action.equalsIgnoreCase("login")) {
             acceso = login;
-        }else if (action.equalsIgnoreCase("configPerfil")) {
+        } //Configuracion de Perfil
+        else if (action.equalsIgnoreCase("configPerfil")) {
 
             acceso = configPerfil;
 
-        }else if (action.equalsIgnoreCase("cerrarSesion")) {
+        } else if (action.equalsIgnoreCase("cerrarSesion")) {
             cerrarSesion(request, response);
             return;
-        } else if (action.equalsIgnoreCase("expirado")) {
-            acceso = expirado;
+        } else if (action.equals("Carro")) {
+            request.getRequestDispatcher("View/Carro.jsp").forward(request, response);
         } //Add
-         else if (action.equalsIgnoreCase("addUsuario")) {
+        else if (action.equalsIgnoreCase("addUsuario")) {
             acceso = addUsuario;
         } else if (action.equalsIgnoreCase("addUsuarioD")) {
             acceso = addUsuarioD;
@@ -413,65 +427,54 @@ public class Controlador extends HttpServlet {
             Playlist playlist = nuevaPlaylistDAO.buscarPlaylist(playlistId);
             request.setAttribute("playlist", playlist);
             acceso = addCancionesPlaylist;
-        }
-        //Delete
-        else if(action.equalsIgnoreCase("eliminarUsuario")){
+        } //Edit
+        else if (action.equalsIgnoreCase("editUsuario")) {
+            acceso = editUsuario;
+        } else if (action.equalsIgnoreCase("editPlaylist")) {
+            int playlistId = Integer.parseInt(request.getParameter("id"));
+            Playlist playlist = nuevaPlaylistDAO.buscarPlaylist(playlistId);
+            request.setAttribute("play", playlist);
+            acceso = editPlaylist;
+        } //Delete
+        else if (action.equalsIgnoreCase("eliminarUsuario")) {
             int usuarioId = Integer.parseInt(request.getParameter("id"));
             nuevoUsuario.setCodigoUsuario(usuarioId);
             nuevoUsuarioDAO.eliminarUsuario(usuarioId);
-            acceso=listarUsuarios;
-        } else if(action.equalsIgnoreCase("eliminarPlaylist")){
+            acceso = listarUsuarios;
+        } else if (action.equalsIgnoreCase("eliminarPlaylist")) {
             int playlistId = Integer.parseInt(request.getParameter("id"));
             play.setCodigoPlaylist(playlistId);
             nuevaPlaylistDAO.eliminarPlaylist(playlistId);
-            acceso=playlists;
-        } else if(action.equalsIgnoreCase("eliminarCancionPlaylist")){
-            int canId = Integer.parseInt(request.getParameter("cancionId"));
-            int playcId = Integer.parseInt(request.getParameter("playlistId"));
-
-            PlaylisthasCanciones playlisthasCanciones = playcDAO.buscarIdPlaylisthasCanciones(canId, playcId);
-
-            if (playlisthasCanciones != null) {
-                int codigoPlayC = playlisthasCanciones.getCodigoPlaylist(); // Obtener el código de playlist del objeto
-
-                playcDAO.eliminarPlaylisthasCanciones(playlisthasCanciones.getCodigoPlaylisthasCanciones());
-
-                response.sendRedirect("Controlador?accion=playlist&id=" + playcId);
-                System.out.println("codigo playhasc: " + codigoPlayC);
-                System.out.println("Se eliminó la canción");
-            } else {
-                // Manejar el caso donde no se encuentra la entrada en la tabla
-                System.out.println("No se encontró la entrada en la tabla PlaylisthasCanciones");
-            }
-
-            return;
-        }else if(action.equalsIgnoreCase("eliminarBusqueda")){
+            acceso = playlists;
+        } else if (action.equalsIgnoreCase("eliminarCancionPlaylist")) {
+            int playcId = Integer.parseInt(request.getParameter("playcId"));
+            playc.setCodigoPlaylisthasCanciones(playcId);
+            playcDAO.eliminarPlaylisthasCanciones(playcId);
+            acceso = playlists;
+        } else if (action.equalsIgnoreCase("eliminarBusqueda")) {
             int busquedaId = Integer.parseInt(request.getParameter("id"));
             hb.setCodigoHistorialB(busquedaId);
             hbDAO.eliminarHistorialBusqueda(busquedaId);
-            acceso=historialBusqueda;
-        } else if(action.equalsIgnoreCase("eliminarReproduccion")){
+            acceso = historialBusqueda;
+        } else if (action.equalsIgnoreCase("eliminarReproduccion")) {
             int reproduccionId = Integer.parseInt(request.getParameter("id"));
             hr.setCodigoHistorialR(reproduccionId);
             hrDAO.eliminarHistorialReproduccion(reproduccionId);
-            acceso=HistorialReproduccion;
-        } else if(action.equalsIgnoreCase("eliminarFav")){
-            int cancionId = Integer.parseInt(request.getParameter("id"));
-            int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
-            nuevoFavDAO.eliminarFavoritos(cancionId, codigoUsuario);
-            response.sendRedirect("Controlador?accion=favoritos");
-            return;
-        }
-        
-        // otros
-        else if (action.equalsIgnoreCase("cancion")){
+            acceso = HistorialReproduccion;
+        } else if (action.equalsIgnoreCase("eliminarLogin")) {
+            int loginId = Integer.parseInt(request.getParameter("id"));
+            logins.setCodigoLogin(loginId);
+            loginDAO.eliminarLogin(loginId);
+            acceso = login;
+        } // otros
+        else if (action.equalsIgnoreCase("cancion")) {
             int codigoCancion = Integer.parseInt(request.getParameter("id"));
             int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
             Canciones song = cancionesDAO.buscarCancion(codigoCancion);
             hrDAO.agregarHistorialReproduccion(codigoUsuario, codigoCancion);
             request.setAttribute("cancion", song);
             request.setAttribute("usuario", codigoUsuario);
-            acceso=cancion;
+            acceso = cancion;
         }
 
         System.out.println("Este es acceso > " + acceso);
@@ -484,7 +487,7 @@ public class Controlador extends HttpServlet {
     }
 
     private void agregarUsuario(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         String nombreCompleto = request.getParameter("txtNombre");
         String usuario = request.getParameter("txtUsuario");
         String correoUsuario = request.getParameter("txtCorreo");
@@ -516,7 +519,7 @@ public class Controlador extends HttpServlet {
     }
 
     private void agregarUsuarioD(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         String nombreCompleto = request.getParameter("txtNombre");
         String usuario = request.getParameter("txtUsuario");
         String correoUsuario = request.getParameter("txtCorreo");
@@ -571,6 +574,20 @@ public class Controlador extends HttpServlet {
 
     }
 
+    private void editPlaylist(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String nombrePlaylist = request.getParameter("txtNombrePlaylist");
+        String descripcionPlaylist = request.getParameter("txtDescripcionPlaylist");
+        String imagen = request.getParameter("txtImagenPlaylist");
+        Playlist nuevaPlaylist = new Playlist();
+        nuevaPlaylist.setNombrePlaylist(nombrePlaylist);
+        nuevaPlaylist.setDescripcionPlaylist(descripcionPlaylist);
+        nuevaPlaylist.setImagen(imagen);
+        nuevaPlaylistDAO.modificarPlaylist(nuevaPlaylist);
+        response.sendRedirect("Controlador?accion=playlists");
+
+    }
+
     private void agregarCancionPlaylist(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int playlistId = Integer.parseInt(request.getParameter("playlistId"));
@@ -587,8 +604,7 @@ public class Controlador extends HttpServlet {
             response.sendRedirect("error.jsp");
         }
     }
-    
-    
+
     private void cerrarSesion(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int codigoUsuario = (int) request.getSession().getAttribute("codigoUsuario");
@@ -599,7 +615,7 @@ public class Controlador extends HttpServlet {
 
         LoginDAO loginDAO = new LoginDAO();
         loginDAO.agregarLogin(nuevoLogin);
-        
+
         request.getSession().invalidate();
 
         response.sendRedirect("index.jsp");
@@ -622,18 +638,24 @@ public class Controlador extends HttpServlet {
         favDAO.eliminarFavoritos(idCancion, idUsuario);
 
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("LLEGA LA METODO POSTO ALMENOS");
+        request.setCharacterEncoding("UTF-8");
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
         String raw = request.getParameter("raw");
 
         System.out.println("Menu: " + menu); //menu actual
         System.out.println("Accion: " + accion);//accion actual
-        System.out.println("raw: "+raw);
+        System.out.println("raw: " + raw);
         if (menu != null && accion != null) {
             if (menu.equalsIgnoreCase("Principal")) {
+                if (request.getParameter("codUsuario") != null) {
+                    codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+                    System.out.println("El codigo de usuario es: " + codUsuario);
+                }
                 if (accion.equalsIgnoreCase("Login")) {
                     String usuario = request.getParameter("txtUser");
                     String clave = request.getParameter("txtPass");
@@ -656,8 +678,7 @@ public class Controlador extends HttpServlet {
                         request.getSession().setAttribute("codigoUsuario", codigoUsuarioAutenticado);
                         response.sendRedirect("Controlador?accion=principal");
                         return;
-                    }
-                     else {
+                    } else {
                         response.sendRedirect("error.jsp");
                         return;
                     }
@@ -673,7 +694,10 @@ public class Controlador extends HttpServlet {
                     agregarPlaylist(request, response);
                     return;
                 } else if (accion != null && accion.equalsIgnoreCase("NoAgregarPlaylist")) {
-                    request.getRequestDispatcher("View/listarPlaylist.jsp").forward(request, response);
+                    response.sendRedirect("Controlador?accion=playlists");
+                    return;
+                } else if (accion != null && accion.equalsIgnoreCase("ActualizarPlaylist")) {
+                    editPlaylist(request, response);
                     return;
                 } else if (accion != null && accion.equalsIgnoreCase("agregarCancionPlaylist")) {
                     int playlistId = Integer.parseInt(request.getParameter("playlistId"));
@@ -693,17 +717,29 @@ public class Controlador extends HttpServlet {
                     agregarCancionPlaylist(request, response);
                     return;
                 }
-            }
-        } else if (menu.equalsIgnoreCase("fotoPerfil")) {
+
+                //Configuración - Subir Fotografía de Perfil
+            } else if (menu.equalsIgnoreCase("fotoPerfil")) {
                 UsuariosDAO usuarioDAO = new UsuariosDAO();
 
                 switch (accion) {
-                    case "Subir":
+                    case "SubirFoto":
+                        System.out.println("Llega al metodo de Subir");
+
+                        Object codigoUsuarioObj = request.getSession().getAttribute("codigoUsuario");
+                        int idUsuario = 0; // Valor predeterminado o manejo de error si no es posible obtener el código de usuario
+
+                        if (codigoUsuarioObj != null && codigoUsuarioObj instanceof Integer) {
+                            idUsuario = (int) codigoUsuarioObj;
+                        } else {
+                            request.getRequestDispatcher("View/expirado.jsp").forward(request, response);
+                        }
+
                         Part filePart = request.getPart("imagen");
                         InputStream img = filePart.getInputStream();
-                        System.out.println("Osea Si entra pe: " + codUsuario + " " + img);
-                        usuarioDAO.agregarFotoPerfil(codUsuario, img);
-                        ResultSet rs = usuarioDAO.fijarImagen(codUsuario);
+                        System.out.println("Osea Si entra pe: " + idUsuario + " " + img);
+                        usuarioDAO.agregarFotoPerfil(idUsuario, img);
+                        ResultSet rs = usuarioDAO.fijarImagen(idUsuario);
 
                         try {
 
@@ -726,26 +762,17 @@ public class Controlador extends HttpServlet {
                             e.printStackTrace();
                         }
 
-                        request.getRequestDispatcher("Principal.jsp").forward(request, response);
                         break;
-                    }
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-
-            } else if (menu.equalsIgnoreCase("Favoritos")) {
-                if (accion.equalsIgnoreCase("AgregarFavorito")) {
-                    agregarFavorito(request, response);
-                    return;
-                } else if (accion.equalsIgnoreCase("EliminarFavorito")) {
-                    eliminarFavorito(request, response);
-                    return;
                 }
+                request.getRequestDispatcher("Principal.jsp").forward(request, response);
+
             }
-        
-      else {
+        } else {
             response.sendRedirect("error.jsp");
         }
 
         processRequest(request, response);
+
     }
 
     @Override

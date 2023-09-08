@@ -11,8 +11,68 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Css/nosotrosCss.css">
         <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
-        <title>Mizik® for everyone</title>
+        <title>Mizik for everyone</title>
         <script src="https://kit.fontawesome.com/bb229f5329.js" crossorigin="anonymous"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+
+
+            header {
+                background-color: #f0f0f0;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+
+
+            .icon_menu {
+                margin-right: 20px;
+            }
+
+
+
+            .title_header {
+                flex: 1;
+            }
+
+
+
+            main {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 20px;
+            }
+
+
+
+            .image-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+            }
+
+
+
+            .content-wrapper {
+                margin-bottom: 10px;
+            }
+
+
+
+            .link {
+                text-align: center;
+                color: #333;
+                text-decoration: none;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -22,12 +82,10 @@
                 </a>
             </div>
             <div class="title_header">
-                <h1>.                 Un poco de Mizik®</h1>
+                <h1>Un poco de Mizik</h1>
             </div>
         </header>
-        
-        <main>
-        <div class="uno">
+        <main style="margin-top: 80px">
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -36,7 +94,6 @@
                 </div>
                 <a class="link">Luciano Maquin</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -45,7 +102,6 @@
                 </div>
                 <a class="link">Diego Álvarez</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -54,8 +110,6 @@
                 </div>
                 <a class="link">José Matías</a>
             </div>
-        </div>
-        <div class="dos">
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -64,7 +118,6 @@
                 </div>
                 <a class="link">Sebastián Istacuy</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -73,7 +126,6 @@
                 </div>
                 <a class="link">David Arévalo</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -82,8 +134,6 @@
                 </div>
                 <a class="link">Diego Marroquin</a>
             </div>
-        </div>
-        <div class="tres">
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -92,7 +142,6 @@
                 </div>
                 <a class="link">Diego Barton</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -101,7 +150,6 @@
                 </div>
                 <a class="link">Alejandro Max</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -110,8 +158,6 @@
                 </div>
                 <a class="link">Ignacio Iboy</a>
             </div>
-        </div>
-        <div class="cuatro">
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -120,7 +166,6 @@
                 </div>
                 <a class="link">Iván López</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -129,7 +174,6 @@
                 </div>
                 <a class="link">Pedro López</a>
             </div>
-            <br>
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -138,8 +182,6 @@
                 </div>
                 <a class="link">Santiago Maeda</a>
             </div>
-        </div>
-        <div class="cinco">
             <div class="image-container">
                 <div class="content-wrapper">
                     <a>
@@ -148,8 +190,6 @@
                 </div>
                 <a class="link">Brandon Marroquin</a>
             </div>
-            <br>
-        </div>
         </main>
     </body>
 </html>

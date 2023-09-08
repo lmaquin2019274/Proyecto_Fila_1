@@ -106,7 +106,7 @@ public class PlaylistDAO implements CRUDPlaylist {
     
     @Override
     public boolean modificarPlaylist(Playlist playlist) {
-        String sql = "update PlayList set nombrePlaylist = ?, descripcionPlaylist = ?, imagen = ? where codigoPlaylist = ?";
+        String sql = "update playList set nombrePlaylist = ?, descripcionPlaylist = ?, imagen = ? where codigoPlaylist = ?";
         try {
             con = connect.getConnection();
             ps = con.prepareStatement(sql);
@@ -121,6 +121,7 @@ public class PlaylistDAO implements CRUDPlaylist {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("modificaciónsdcsdc");
         return false;
     }
 

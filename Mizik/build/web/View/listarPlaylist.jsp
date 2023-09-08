@@ -68,7 +68,7 @@
                 font-size: 35px;
                 cursor: pointer;
             }
-            
+
             .icon_add{
                 width: 100px;
                 height: 40px;
@@ -109,17 +109,25 @@
             <div class="row" style="margin-top: 120px;">
                 <%
                     PlaylistDAO playlistdao = new PlaylistDAO();
-                    List<Playlist> listaPlaylist  = playlistdao.listarPlaylists(codigoUsuario);
+                    List<Playlist> listaPlaylist = playlistdao.listarPlaylists(codigoUsuario);
                     Iterator<Playlist> iterator = listaPlaylist.iterator();
                     Playlist play = null;
                     int playlistCount = 0;
 
+                    // Verifica si no hay playlists y muestra un mensaje
+                    if (!iterator.hasNext()) {
+                %>
+                <div class="col-md-12 text-center">
+                    <p>Aquí podrás guardar tus playlists :)</p>
+                </div>
+                <%
+                } else {
                     while (iterator.hasNext()) {
                         play = iterator.next();
                 %>
                 <div class="col-md-4 artist-card">
                     <a href="Controlador?accion=playlist&id=<%= play.getCodigoPlaylist()%>">
-                        <img src="img/playlists/<%= play.getImagen() %>" alt="<%= play.getNombrePlaylist()%>" width="165" class="circular-image">
+                        <img src="img/playlists/<%= play.getImagen()%>" alt="<%= play.getNombrePlaylist()%>" width="165" class="circular-image">
                     </a>
                     <h4><%= play.getNombrePlaylist()%></h4>
                     <h6>
@@ -128,34 +136,32 @@
                         <a href="#" onclick="confirmarEliminacion(<%= play.getCodigoPlaylist()%>)">
                             <i class="fa-solid fa-trash" style="color: #9d1c28;"></i>
                         </a>
-                        <a style="color: white">_</a>
-                        <a href="#">
-                            <i class="fa-solid fa-pen" style="color: #e6c822;"></i>
-                        </a>
                     </h6>
                 </div>
                 <%
                     playlistCount++;
-                    // Cerrar una fila y abrir una nueva después de mostrar 3 artistas
                     if (playlistCount % 3 == 0) {
                 %>
             </div>
-            <div class="row" style="margin-top: 20px;"> <!-- Agrega margen superior para separar las filas -->
+            <div class="row" style="margin-top: 20px;"> 
                 <%
                         }
                     }
                 %>
             </div>
+            <%
+                }
+            %>
         </div>
-<script>
-    function confirmarEliminacion(playlistId) {
-        var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta playlist?");
-        if (confirmacion) {
-            window.location.href = "Controlador?accion=eliminarPlaylist&id=" + playlistId;
-        } else {
-            // El usuario canceló la eliminación, no se hace nada.
-        }
-    }
-</script>
+        <script>
+            function confirmarEliminacion(playlistId) {
+                var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta playlist?");
+                if (confirmacion) {
+                    window.location.href = "Controlador?accion=eliminarPlaylist&id=" + playlistId;
+                } else {
+                    // El usuario canceló la eliminación, no se hace nada.
+                }
+            }
+        </script>
     </body>
 </html>

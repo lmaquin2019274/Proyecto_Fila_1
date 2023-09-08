@@ -11,23 +11,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="mizikCss.css">
+        <link rel="stylesheet" href="Perfil.css">
         <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
         <title>Mizik® for everyone</title>
         <script src="https://kit.fontawesome.com/bb229f5329.js" crossorigin="anonymous"></script>
+
     </head>
     <body id="body">
         <header>
             <div class="icon_menu">
                 <i class="fa-solid fa-bars" style="color: #3f4529;" id="btn_open"></i>
+
+
+
+
+
             </div>
             <div class="title_header">
-                <h1>.                  Mizik®</h1>
+                <h1>.                 Mizik®</h1>
+
+
+
             </div>
             <div class="youtube-style-icon">
                 <img src="data:image/png;base64,<%= new String(Base64.getEncoder().encode((byte[]) request.getAttribute("imgUser")))%>" alt="fotoDePerfil" class="youtube-style-icon">
             </div>
+
         </header>
-        
+
         <div class="menu_side" id="menu_side">
             <div class="name_page">
                 <img src="img/logo.png" alt="14" width="26"/>
@@ -40,21 +51,21 @@
                         <h4>Inicio</h4>
                     </div>
                 </a>
-                
+
                 <a href="#" id="biblioteca-tab">
                     <div class="option">
                         <i class="fa-solid fa-music" style="color: #f7c607;" title="Biblioteca"></i>
                         <h4>Biblioteca</h4>
                     </div>
                 </a>
-                
+
                 <a href="#" id="buscar-tab">
                     <div class="option">
                         <i class="fa-solid fa-magnifying-glass" style="color: #f7c607;" title="Buscar"></i>
                         <h4>Buscar</h4>
                     </div>
                 </a>
-                
+
                 <a href="#" id="opciones-tab">
                     <div class="option">
                         <i class="fa-solid fa-gear" style="color: #f7c607;" title="Opciones"></i>
@@ -63,26 +74,9 @@
                 </a>
             </div>
         </div>
-        
+
         <main>
             <div id="inicio">
-                
-                <style>
-                @keyframes spin {
-                  0% { transform: rotate(0deg); }
-                  100% { transform: rotate(360deg); }
-                }
-
-                #saludo {
-                  display: inline-block;
-                }
-
-                #sol {
-                  display: inline-block;
-                  font-size: 2rem;
-                }
-                </style>
-                
                 <h1>
                     <span id="sol" class="fa-fw fa-lg"><i class="fa-solid fa-sun" style="color: #fad70e;"></i></span>
                     <span id="saludo">Buenos días</span>
@@ -104,8 +98,6 @@
                       solElement.innerHTML = '<i class="fa-solid fa-moon" style="color: #572981;"></i>';
                     }
                   </script>
-                  
-                  <br>
                 <div class="image_biblioteca">
                     <div class="content_biblioteca">
                         <a href="Controlador?accion=mixes">
@@ -129,6 +121,14 @@
                         </a>
                     </div>
                     <a class="link" href="Controlador?accion=albumes">Los mejores álbumes</a>
+                </div>
+                <div class="image_biblioteca">
+                    <div class="content_biblioteca">
+                        <a href="Controlador?accion=albumes">
+                            <i class="fa-solid fa-cart-shopping" style="color: #efc416;"></i>
+                        </a>
+                    </div>
+                    <a class="link" href="Controlador?accion=Carro">Tienda en línea</a>
                 </div>
             </div>
             <div id="biblioteca" style="display: none;">
@@ -157,7 +157,7 @@
                     </div>
                     <a class="link" href="Controlador?accion=biblioteca">Otros</a>
                 </div>
-                
+
             </div>
             <div id="buscar" style="display: none;">
                 <h1>Buscar</h1>
@@ -165,8 +165,6 @@
                     <input type="text" name="txtBuscar" placeholder="Busca canciones, artistas y álbumes">
                     <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                 </div>
-                <br>
-                <br>
                 <div class="image_biblioteca">
                     <div class="content_biblioteca">
                         <a href="Controlador?accion=canciones">
@@ -219,7 +217,7 @@
                     </div>
                     <a class="link" href="Controlador?accion=login">Registro de login</a>
                 </div>
-                
+
                 <div class="image-container">
                     <div class="content-wrapper">
                         <a href="Controlador?accion=configPerfil">
@@ -228,7 +226,7 @@
                     </div>
                     <a class="link" href="Controlador?accion=configPerfil">Subir Foto de Perfil</a>
                 </div>
-                
+
                 <div class="image-container">
                     <div class="content-wrapper">
                         <a href="Controlador?accion=index">
@@ -237,12 +235,14 @@
                     </div>
                     <a class="link" href="Controlador?accion=index">Cerrar Sesión</a>
                 </div>
+
+
                 <a class="link_nosotros" href="Controlador?accion=config">Sobre nosotros</a><br>
             </div>
         </main>
-        
+
     </body>
-    
+
     <script src="js/script.js"></script>
-    
+
 </html>

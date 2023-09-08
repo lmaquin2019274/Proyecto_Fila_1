@@ -10,8 +10,8 @@ public class Conexion {
     public Conexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-//            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Musical?useSSL=false", "root", "K$oport3Lab");
             conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Musical?useSSL=false", "root", "admin");
+//            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Musical?useSSL=false", "quinto", "admin");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("La conexión no se pudo establecer" + e);
