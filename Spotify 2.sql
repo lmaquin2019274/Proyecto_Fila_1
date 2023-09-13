@@ -175,6 +175,8 @@ insert into Artista (nombreArtista,fechaNacimiento,paisNacimiento)
 value ('Travis Scott','1991-04-30','Estados Unidos');
 insert into Artista (nombreArtista,fechaNacimiento,paisNacimiento)
 value ('Metro Boomin','1993-09-16','Estados Unidos');
+insert into Artista (nombreArtista,fechaNacimiento,paisNacimiento)
+value ('Frank Ocean','1987-10-28','Estados Unidos');
 
 -- Insert Generos ---------------------------
 insert into Generos (nombreGenero, origen, descripcion) 
@@ -194,35 +196,11 @@ values('Hip Hop', 'Estados Unidos', 'Género musical que incorpora rimas, ritmo 
 
 -- Insert Albunes ------------------------
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('21','pop,soul','2011-01-24',4);
+values('Spider Man','Hip Hop','2023-06-02',8);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('25','pop,soul','2015-11-20',4);
+values('Not All Heroes Wear Capes','Hip Hop','2018-11-02',8);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('19','pop,soul','2008-01-28',4);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Opus','Salsa','2019-05-10',1);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('3.0','Salsa','2013-07-23',1);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Amar sin mentiras','Salsa','2004-06-08',1);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Plus','Pop, Folk','2011-09-09',2);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('X','Pop, R&B','2014-06-20',2);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('÷','Pop, Hip Hop','2017-03-03',2);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Lemonade',' R&B, Pop','2016-04-23',3);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('BDay','R&B, Pop','2006-09-01',3);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('4','R&B, Pop','2011-06-24',3);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Un azteca en el Azteca','Ranchera','2016-09-02',5);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('¡Arriba Huentitàn!','Ranchera','1972-08-27',5);
-insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Un Mexicano en la México','Ranchera','2010-07-20',5);
+values('Heroes & Villans','Hip Hop','2022-12-02',8);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
 values('After Hours','Hip Hop','2020-03-20',6);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
@@ -236,558 +214,660 @@ values('Utopia','Trap','2023-07-28',7);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
 values('Rodeo','Trap','2015-09-04',7);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Spider Man','Hip Hop','2023-06-02',8);
+values('Blond','Soul','2016-08-20',9);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Not All Heroes Wear Capes','Hip Hop','2018-11-02',8);
+values('Channel Orange','R&B','2012-07-10',9);
 insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
-values('Heroes & Villans','Hip Hop','2022-12-02',8);
+values('Nostalgia','Hip Hop','2016-08-20',9);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Lemonade',' R&B, Pop','2016-04-23',3);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('BDay','R&B, Pop','2006-09-01',3);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('4','R&B, Pop','2011-06-24',3);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Un azteca en el Azteca','Ranchera','2016-09-02',5);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('¡Arriba Huentitàn!','Ranchera','1972-08-27',5);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Un Mexicano en la México','Ranchera','2010-07-20',5);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Opus','Salsa','2019-05-10',1);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('3.0','Salsa','2013-07-23',1);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Amar sin mentiras','Salsa','2004-06-08',1);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('Plus','Pop, Folk','2011-09-09',2);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('X','Pop, R&B','2014-06-20',2);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('÷','Pop, Hip Hop','2017-03-03',2);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('21','pop,soul','2011-01-24',4);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('25','pop,soul','2015-11-20',4);
+insert into Album (nombreAlbum, generoComun, fechaLanzamiento,codigoArtista) 
+values('19','pop,soul','2008-01-28',4);
 
 -- ------------------------------Insert Canciones ----------------------------------------------------
--- Adele --------------------------------
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Rolling in the Deep','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Rolling%20in%20the%20Deep.mp3','3:53',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Someone Like You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Someone%20Like%20You.mp3','4:46',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Set Fire to the Rain','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Set%20Fire%20to%20the%20Rain.mp3','3:58',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Rumour Has It','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Rumour%20Has%20It.mp3','3:43',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Turning Tables','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Turning%20Tables.mp3','4:04',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dont You Remember','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Dont%20You%20Remember.mp3','4:15',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('One and Only','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/One%20And%20Only.mp3','5:46',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lovesong','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Lovesong.mp3','5:17',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Take It All','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Take%20It%20All.mp3','3:50',2,4,1);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('He Wont Go','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/He%20Wont%20Go.mp3','4:39',2,4,1);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hello','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Hello.mp3','6:06',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Send My Love (To Your New Lover)','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Send%20My%20Love%20To%20Your%20New%20Lover.mp3','3:45',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I Miss You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/I%20Miss%20You.mp3','5:49',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('When We Were Young','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/When%20We%20Were%20Young.mp3','4:51',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Remedy','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Remedy.mp3','4:05',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Water Under the Bridge','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Water%20Under%20the%20Bridge.mp3','4:00',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('River Lea','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/River%20Lea.mp3','3:45',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('All I Ask','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/All%20I%20Ask.mp3','4:35',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Love in the Dark','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Love%20In%20The%20Dark.mp3','4:46',2,4,2);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sweetest Devotion','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Sweetest%20Devotion.mp3','4:12',2,4,2);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Chasing Pavements','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Chasing%20Pavements.mp3','3:31',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hometown Glory','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Hometown%20Glory.mp3','4:31',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Make You Feel My Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Make%20You%20Feel%20My%20Love.mp3','3:32',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('First Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/First%20Love.mp3','3:10',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Daydreamer','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Daydreamer.mp3','3:41',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Melt My Heart to Stone','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Melt%20My%20Heart%20To%20Stone.mp3','3:24',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Cold Shoulder','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Cold%20Shoulder.mp3','3:12',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Tired','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Tired.mp3','4:19',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('My Same','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/My%20Same.mp3','3:16',2,4,3);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Right as Rain','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Right%20As%20Rain.mp3','3:17',2,4,3);
-
--- Marc Antony -----------------------------------------------
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Úsame','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/%C3%9Asame.mp3','5:00',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Parecen viernes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Parecen%20Viernes.mp3','4:28',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lo que te di','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Lo%20Que%20Te%20Di.mp3','4:02',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Un amor eterno','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Un%20Amor%20Eterno.mp3','4:19',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lo peor de mí','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Lo%20Peor%20de%20M%C3%AD.mp3','5:10',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Reconozco','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Reconozco.mp3','4:08',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Soy yo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Soy%20Yo.mp3','4:51',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Tu vida en la mía','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tu%20vida%20en%20la%20mia.mp3','6:14',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Si me creyeras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Si%20Me%20Creyeras.mp3','4:30',1,1,4);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Si pudiera','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Si%20Pudiera.mp3','4:26',1,1,4);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Volver a comenzar','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Volver%20a%20Comenzar.mp3','4:37',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Cautivo de tu amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Cautivo%20de%20Este%20Amor.mp3','3:40',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Espera','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Espera.mp3','4:01',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La copa rota','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/La%20Copa%20Rota.mp3','3:29',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hipocresía','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Hipocres%C3%ADa.mp3','4:32',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Cambio de piel','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Cambio%20de%20Piel.mp3','4:39',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Vivir mi vida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Vivir%20Mi%20Vida.mp3','3:51',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Flor pálida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Flor%20P%C3%A1lida.mp3','4:40',1,1,5);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dime si no es verdad','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Dime%20Si%20No%20es%20Verdad.mp3','4:06',1,1,5);
-
- 
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Escapémonos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Escap%C3%A9monos.mp3','4:46',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Volando Entre Tus Brazos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Volando%20Entre%20Tus%20Brazos.mp3','4:25',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Tan Solo Palabras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tan%20Solo%20Palabras.mp3','3:42',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Tu Amor Me Hace Bien','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tu%20Amor%20Me%20Hace%20Bien.mp3','4:36',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Ahora Quien','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Ahora%20Quien.mp3','5:05',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Amar Sin Mentiras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Amar%20Sin%20Mentiras.mp3','4:50',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Se Esfuma Tu Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Se%20Esfuma%20Tu%20Amor.mp3','3:53',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Nada Personal','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Nada%20Personal.mp3','4:40',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Amigo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Amigo.mp3','3:43',1,1,6);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Valio la Pena','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Valio%20La%20Pena.mp3','3:43',1,1,6);
-
--- Ed Sheeran -------------------------------------------------------------------------------------
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('The A Team','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/The%20A%20team.mp3','4:50',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lego House','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Lego%20House.mp3','4:06',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Drunk','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Drunk.mp3','3:18',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('U.N.I.','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/UNI.mp3','3:49',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Grade 8','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Grade%208.mp3','3:00',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Wake Me Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Wake%20Me%20Up.mp3','3:48',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Small Bump','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Small%20Bump.mp3','4:26',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('This','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/This.mp3','3:10',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Kiss Me','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Kiss%20Me.mp3','4:41',2,2,7);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Give Me Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Give%20me%20love.mp3','4:22',2,2,7);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sing','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Sing.mp3','4:29',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dont','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Dont.mp3','4:52',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Thinking Out Loud','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Thinking%20Out%20Loud.mp3','4:46',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Bloodstream','bloodstream.mp3','4:00',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Im a Mess','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Im%20a%20Mess.mp3','4:12',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Photograph','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/photograph.mp3','4:21',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Afire Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Afire%20Love.mp3','4:22',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Take It Back','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/takeItBack.mp3','3:28',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Even My Dad Does Sometimes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/evenMyDadDoesSometimes.mp3','3:46',2,2,8);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Shirtsleeves','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/shirtsleeves.mp3','3:08',2,2,8);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Shape of You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/shapeofYou.mp3','3:58',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Castle on the Hill','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/castleontheHill.mp3','4:37',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Galway Girl','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/galwayGirl.mp3','2:50',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Perfect','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/perfect.mp3','4:40',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Happier','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/happier.mp3','3:35',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('New Man','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/newMan.mp3','3:09',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dive','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/dive.mp3','3:58',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Supermarket Flowers','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/supermarketFlowers.mp3','3:42',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Barcelona','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/barcelona.mp3','3:11',2,2,9);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Nancy Mulligan','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/nancyMulligan.mp3','3:00',2,2,9);
-
--- Travis Scott -------------------------------------
--- ASTROWORLD --
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No Bystanders','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/No%20Bystanders.mp3','3:40',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('AstroThunder','formation.mp3','2:25',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sicko Mode','formation.mp3','5:15',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Butterfly Effect','formation.mp3','3:11',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Stop Trying to be god','formation.mp3','5:40',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Skeletons','formation.mp3','2:28',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('R.I.P Screw','formation.mp3','3:06',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Stargazing','formation.mp3','4:33',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Yosemite','formation.mp3','2:32',7,7,19);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Houstonfornication','formation.mp3','3:40',7,7,19);
--- UTOPIA --
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I KNOW?','formation.mp3','3:34',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('MODERN JAM','formation.mp3','4:14',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('MELTDOWN','formation.mp3','4:08',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('FE!N','formation.mp3','3:14',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Parasail','formation.mp3','2:37',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Til further notice','formation.mp3','5:17',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Skitzo','formation.mp3','6:09',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('My eyes','formation.mp3','3:13',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('K-pop','formation.mp3','3:07',7,7,20);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('God´s Country','formation.mp3','2:10',7,7,20);
--- RODEO --
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('90210','formation.mp3','5:40',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Antidote','formation.mp3','4:25',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Wasted','formation.mp3','3:58',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I can tell','formation.mp3','3:56',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Nightcrawler','formation.mp3','5:22',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Maria i´m drunk','formation.mp3','5:50',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Never catch me','formation.mp3','2:57',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Pray 4 love','formation.mp3','5:07',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Apple pie','formation.mp3','3:40',7,7,21);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Oh my dis side','formation.mp3','5:52',7,7,21);
-
 -- Metro Boomin -------------------------------------
 -- Album Spiderman --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Danger(Spider)','formation.mp3','3:26',7,8,22);
+values('Annihilate','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Annihilate.mp3','3:52',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Am i Dreaming','formation.mp3','4:17',7,8,22);
+values('Silk & Cologne','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Silk%20and%20Cologne.mp3','2:42',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Silk & Cologne','formation.mp3','2:43',7,8,22);
+values('Self Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Self%20Love.mp3','3:09',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Annihilate','formation.mp3','3:52',7,8,22);
+values('Calling','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Calling.mp3','3:40',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Link Up','formation.mp3','3:16',7,8,22);
+values('Danger(Spider)','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Danger.mp3','3:26',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Calling','formation.mp3','3:40',7,8,22);
+values('Am i Dreaming','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Am%20I%20Dreaming.mp3','4:17',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Home','formation.mp3','3:16',7,8,22);
+values('Link Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Link%20Up.mp3','3:15',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hummingbird','formation.mp3','5:20',7,8,22);
+values('Home','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Home.mp3','3:15',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Self Love','formation.mp3','3:10',7,8,22);
+values('Hummingbird','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Hummingbird.mp3','5:19',7,8,1);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Givin´ Up','formation.mp3','3:55',7,8,22);
+values('Givin´ Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Givin%20Up.mp3','3:54',7,8,1);
 -- Album Not All Heroes Wear Capes --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Only 1','formation.mp3','1:21',7,8,23);
+values('Only 1','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Only%201.mp3','1:20',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Overdue','formation.mp3','2:46',7,8,23);
+values('Overdue','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Overdue.mp3','2:46',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Space Cadet','formation.mp3','3:23',7,8,23);
+values('Space Cadet','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Space%20Cadet.mp3','3:23',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Only You','formation.mp3','3:39',7,8,23);
+values('Only You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Only%20You.mp3','3:38',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Borrowed Love','formation.mp3','3:50',7,8,23);
+values('Borrowed Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Borrowed%20Love.mp3','3:50',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('10 Freaky Girls','formation.mp3','3:28',7,8,23);
+values('10 Freaky Girls','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/10%20Freaky%20Girls.mp3','3:28',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Up To Something','formation.mp3','3:04',7,8,23);
+values('Up To Something','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Up%20To%20Something.mp3','3:04',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dreamcatcher','formation.mp3','3:32',7,8,23);
+values('Dreamcatcher','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Dreamcatcher.mp3','3:32',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No More','formation.mp3','4:25',7,8,23);
+values('No More','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/No%20More.mp3','4:25',7,8,2);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No Complaints','formation.mp3','4:26',7,8,23);
+values('No Complaints','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/No%20Complaints.mp3','4:21',7,8,2);
 -- Heroes & Villans --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Trance','formation.mp3','3:15',7,8,24);
+values('Too Many Nights','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Too%20Many%20Nights.mp3','3:19',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Superhero','formation.mp3','3:03',7,8,24);
+values('Trance','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Trance.mp3','3:14',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('On time','formation.mp3','2:49',7,8,24);
+values('Superhero','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Superhero.mp3','3:03',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Umbrella','formation.mp3','3:42',7,8,24);
+values('On time','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/On%20Time.mp3','2:48',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lock On Me','formation.mp3','2:55',7,8,24);
+values('Umbrella','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Umbrella.mp3','3:42',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('All The Money','formation.mp3','2:48',7,8,24);
+values('Lock On Me','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Lock%20On%20Me.mp3','2:55',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Around Me','formation.mp3','3:12',7,8,24);
+values('All The Money','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/All%20The%20Money.mp3','2:47',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Feel The Fiyaaaah','formation.mp3','3:10',7,8,24);
+values('Around Me','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Around%20Me.mp3','3:11',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Too Many Nights','formation.mp3','3:20',7,8,24);
+values('Feel The Fiyaaaah','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/Feel%20The%20Fiyaaaah.mp3','3:09',7,8,3);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I Can´t Save You','formation.mp3','1:31',7,8,24);
+values('I Can´t Save You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Metro%20boomin/I%20Cant%20Save%20You.mp3','1:30',7,8,3);
 
 -- The Weeknd -------------------------------------
 -- Album After Hours --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('After Hours','formation.mp3','6:01',7,6,16);
+values('After Hours','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/After%20Hours.mp3','6:01',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Blinding Lights','formation.mp3','3:20',7,6,16);
+values('Blinding Lights','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Blinding%20Lights.mp3','3:23',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Alone Again','formation.mp3','4:10',7,6,16);
+values('Alone Again','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Alone%20Again.mp3','4:12',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('In Your Eyes','formation.mp3','3:58',7,6,16);
+values('In Your Eyes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/In%20Your%20Eyes.mp3','3:58',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Repeat After Me','formation.mp3','3:16',7,6,16);
+values('Repeat After Me','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Repeat%20After%20Me.mp3','3:16',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hardest To Love','formation.mp3','3:31',7,6,16);
+values('Hardest To Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Hardest%20To%20Love.mp3','3:32',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Snowchild','formation.mp3','4:07',7,6,16);
+values('Snowchild','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Snowchild.mp3','4:07',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Save Your Tears','formation.mp3','3:36',7,6,16);
+values('Save Your Tears','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Save%20Your%20Tears.mp3','3:36',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Escape From LA','formation.mp3','5:56',7,6,16);
+values('Escape From LA','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Escape%20From%20LA.mp3','5:57',7,6,4);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Heartless','formation.mp3','3:18',7,6,16);
+values('Heartless','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Heartless.mp3','3:21',7,6,4);
 
 -- Album Dawn FM --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Is There Someone Else?','formation.mp3','3:20',7,6,17);
+values('Is There Someone Else?','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Is%20There%20Someone%20Else.mp3','3:20',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Here We Go... Again','formation.mp3','3:30',7,6,17);
+values('Here We Go... Again','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Here%20We%20Go...%20Again.mp3','3:30',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Every Angel is Terrifying','formation.mp3','2:48',7,6,17);
+values('Every Angel is Terrifying','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Every%20Angel%20is%20Terrifying.mp3','2:48',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Best Friends','formation.mp3','2:44',7,6,17);
+values('Best Friends','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Best%20Friends.mp3','2:43',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sacrifice','formation.mp3','3:09',7,6,17);
+values('Sacrifice','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Sacrifice.mp3','3:08',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Starry Eyes','formation.mp3','2:28',7,6,17);
+values('Starry Eyes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Starry%20Eyes.mp3','2:28',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dawn FM','formation.mp3','1:37',7,6,17);
+values('Dawn FM','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Dawn%20FM.mp3','1:37',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Out of Time','formation.mp3','3:35',7,6,17);
+values('Out of Time','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Out%20of%20Time.mp3','3:35',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Gasoline','formation.mp3','3:33',7,6,17);
+values('Gasoline','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Gasoline.mp3','3:33',7,6,5);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Take My Breath','formation.mp3','5:40',7,6,17);
+values('Take My Breath','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Take%20My%20Breath.mp3','5:39',7,6,5);
 -- Album Starboy --
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Die for You','formation.mp3','4:20',7,6,18);
+values('Die for You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/dieforyou.mp3','4:20',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Starboy','formation.mp3','3:50',7,6,18);
+values('Starboy','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Starboy.mp3','3:50',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Ordinary Life','formation.mp3','3:42',7,6,18);
+values('Ordinary Life','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Ordinary%20Life.mp3','3:42',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Attention','formation.mp3','3:18',7,6,18);
+values('Attention','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Attention.mp3','3:17',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('True Colors','formation.mp3','3:26',7,6,18);
+values('True Colors','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/True%20Colors.mp3','3:26',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Reminder','formation.mp3','3:39',7,6,18);
+values('Reminder','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Reminder.mp3','3:39',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Secrets','formation.mp3','4:26',7,6,18);
+values('Secrets','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Secrets.mp3','4:26',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Love to Lay','formation.mp3','3:43',7,6,18);
+values('Love to Lay','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/Love%20To%20Lay.mp3','3:43',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('False Alarm','formation.mp3','3:40',7,6,18);
+values('False Alarm','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/False%20Alarm.mp3','3:40',7,6,6);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I Feel It Coming','formation.mp3','4:29',7,6,18);
+values('I Feel It Coming','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/The%20weekend/I%20Feel%20It%20Coming.mp3','4:29',7,6,6);
+
+-- Travis Scott -------------------------------------
+-- ASTROWORLD --
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('No Bystanders','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/No%20Bystanders.mp3','3:40',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('AstroThunder','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Astrothunder.mp3','2:25',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Sicko Mode','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Sicko%20Mode.mp3','5:15',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Butterfly Effect','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Butterfly%20effect.mp3','3:11',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Stop Trying to be god','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/STOP%20TRYING%20TO%20BE%20GOD.mp3','5:40',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Skeletons','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Skeletons.mp3','2:28',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('R.I.P Screw','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/ripScrew.mp3','3:06',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Stargazing','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Stargazing.mp3','4:33',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Yosemite','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Yosemite.mp3','2:32',7,7,7);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Houstonfornication','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Houstonfornication.mp3','3:40',7,7,7);
+-- UTOPIA --
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('I KNOW?','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/iknow.mp3','3:34',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('MODERN JAM','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/modernJam.mp3','4:14',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('MELTDOWN','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/meltdown.mp3','4:08',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('FE!N','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/fein.mp3','3:14',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Parasail','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/parasail.mp3','2:37',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Til further notice','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/tillNotice.mp3','5:17',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Skitzo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/skitzo.mp3','6:09',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('My eyes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/MyEyes.mp3','3:13',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('K-pop','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/kpop.mp3','3:07',7,7,8);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('God´s Country','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/godsCountry.mp3','2:10',7,7,8);
+-- RODEO --
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('90210','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/90210.mp3','5:40',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Antidote','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Antidote.mp3','4:25',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Wasted','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Wasted.mp3','3:58',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('I can tell','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/I%20Can%20Tell.mp3','3:56',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nightcrawler','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Nightcrawler.mp3','5:22',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Maria i´m drunk','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Maria%20Im%20Drunk.mp3','5:50',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('SDP Interlude','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/sdpInterlude.mp3','3:12',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Pray 4 love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Pray%204%20Love.mp3','5:07',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Apple pie','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/Apple%20Pie.mp3','3:40',7,7,9);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Drowning','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Travis%20Scot/drowning.mp3','4:10',7,7,9);
+
+-- Frank Ocean --
+-- Album Blond --
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nights','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/nights.mp3','5:07',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Pretty Sweet','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/PrettySweet.mp3','5:07',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('White Ferrari','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/WhiteFerrari.mp3','4:09',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Be Yourself','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/BeYourself.mp3','1:27',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Futura Free','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/FuturaFree.mp3','9:24',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Ivy','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Ivy.mp3','4:09',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nikes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Nikes.mp3','5:14',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Good Guy','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/GoodGuy.mp3','1:07',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Solo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Solo.mp3','4:17',6,9,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Pink + White','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/pinkWhite.mp3','3:05',6,9,10);
+
+-- Album Channel Orange --
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Super Rich Kids','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Super%20Rich%20Kids.mp3','5:04',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Pyramids','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Pyramids.mp3','9:53',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Bad Religion','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Bad%20Religion.mp3','2:55',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Crack Rock','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Crack%20Rock.mp3','3:44',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Pilot Jones','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Pilot%20Jones.mp3','3:04',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Thinkin Bout You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Thinkin%20Bout%20You.mp3','3:21',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lost','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Lost.mp3','3:54',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Chanel','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Chanel.mp3','3:31',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('DHL','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/DHL.mp3','4:29',4,9,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('In My Room','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/In%20My%20Room.mp3','2:18',4,9,11);
+
+-- Album Nostalgia
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dust','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Dust.mp3','2:33',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lovecrimes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Lovecrimes.mp3','4:00',4,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Songs 4 Women','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Songs4Women.mp3','4:13',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('American Wedding','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/AmericanWedding.mp3','5:00',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Strawberry Swing','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/StrawberrySwing.mp3','3:55',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Novacane','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Novacane.mp3','5:02',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('We All Try','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/WeAllTry.mp3','2:51',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('There Will Be Tears','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/ThereWillBeTears.mp3','3:14',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Swim Good','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/Swim%20Good.mp3','4:16',7,9,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nature Feels','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Frank%20Ocean/NatureFeels.mp3','3:43',7,9,12);
 
 -- Beyoncé ------------------------------------------
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Formation','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/formation.mp3','4:47',3,3,10);
+values('Formation','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/formation.mp3','4:47',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sorry','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sorry.mp3','4:26',3,3,10);
+values('Sorry','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sorry.mp3','4:26',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Hold Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/holdUp.mp3','5:16',3,3,10);
+values('Hold Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/holdUp.mp3','5:16',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dont Hurt Yourself','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/Dont%20Hurt%20Yourself.mp3','3:54',3,3,10);
+values('Dont Hurt Yourself','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/Dont%20Hurt%20Yourself.mp3','3:54',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('6 Inch','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/6Inch.mp3','4:20',3,3,10);
+values('6 Inch','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/6Inch.mp3','4:20',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Daddy Lessons','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/daddyLessons.mp3','6:26',3,3,10);
+values('Daddy Lessons','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/daddyLessons.mp3','6:26',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Love Drought','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveDrought.mp3','3:26',3,3,10);
+values('Love Drought','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveDrought.mp3','3:26',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sandcastles','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sandcastles.mp3','4:36',3,3,10);
+values('Sandcastles','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sandcastles.mp3','4:36',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Freedom','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freedom.mp3','4:50',3,3,10);
+values('Freedom','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freedom.mp3','4:50',3,3,13);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('All Night','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/allNight.mp3','6:21',3,3,10);
+values('All Night','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/allNight.mp3','6:21',3,3,13);
 
  
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Déjà Vu','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/d%C3%A9j%C3%A0Vu.mp3','4:03',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Get Me Bodied','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/getMeBodied.mp3','6:37',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Suga Mama','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sugaMama.mp3','3:31',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Upgrade U','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/upgradeU.mp3','4:37',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Ring the Alarm','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ringtheAlarm.mp3','3:28',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Kitty Kat','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/kittyKat.mp3','3:56',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Freakum Dress','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freakumDress.mp3','3:16',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Green Light','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/greenLight.mp3','3:31',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Irreplaceable','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/irreplaceable.mp3','4:13',3,3,14);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Resentment','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/resentment.mp3','4:41',3,3,14);
 
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Déjà Vu','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/d%C3%A9j%C3%A0Vu.mp3','4:03',3,3,11);
+values('1+1','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/1%2B1.mp3','4:29',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Get Me Bodied','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/getMeBodied.mp3','6:37',3,3,11);
+values('I Care','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ICare.mp3','3:46',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Suga Mama','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sugaMama.mp3','3:31',3,3,11);
+values('I Miss You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/IMissYou.mp3','3:00',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Upgrade U','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/upgradeU.mp3','4:37',3,3,11);
+values('Best Thing I Never Had','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/bestThingINeverHad.mp3','4:12',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Ring the Alarm','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ringtheAlarm.mp3','3:28',3,3,11);
+values('Party','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/party.mp3','3:41',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Kitty Kat','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/kittyKat.mp3','3:56',3,3,11);
+values('Rather Die Young','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ratherDieYoung.mp3','3:43',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Freakum Dress','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freakumDress.mp3','3:16',3,3,11);
+values('Start Over','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/startOver.mp3','3:29',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Green Light','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/greenLight.mp3','3:31',3,3,11);
+values('Love on Top','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveonTop.mp3','3:16',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Irreplaceable','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/irreplaceable.mp3','4:13',3,3,11);
+values('Countdown','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/countdown.mp3','3:33',3,3,15);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Resentment','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/resentment.mp3','4:41',3,3,11);
-
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('1+1','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/1%2B1.mp3','4:29',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I Care','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ICare.mp3','3:46',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('I Miss You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/IMissYou.mp3','3:00',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Best Thing I Never Had','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/bestThingINeverHad.mp3','4:12',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Party','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/party.mp3','3:41',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Rather Die Young','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ratherDieYoung.mp3','3:43',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Start Over','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/startOver.mp3','3:29',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Love on Top','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveonTop.mp3','3:16',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Countdown','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/countdown.mp3','3:33',3,3,12);
-insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('End of Time','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/endofTime.mp3','3:46',3,3,12);
+values('End of Time','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/endofTime.mp3','3:46',3,3,15);
 
 -- Vicente Fernandez -------------------
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No volveré','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noVolver%C3%A9.mp3','3:25',6,5,13);
+values('No volveré','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noVolver%C3%A9.mp3','3:25',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Mátalas','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A1talas.mp3','3:07',6,5,13);
+values('Mátalas','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A1talas.mp3','3:07',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Paloma querida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/palomaQuerida.mp3','3:31 ',6,5,13);
+values('Paloma querida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/palomaQuerida.mp3','3:31 ',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Estos celos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/estosCelos.mp3','3:10',6,5,13);
+values('Estos celos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/estosCelos.mp3','3:10',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Qué de raro tiene','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/qu%C3%A9DeRaroTiene.mp3','3:23',6,5,13);
+values('Qué de raro tiene','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/qu%C3%A9DeRaroTiene.mp3','3:23',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,13);
+values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Ando que me lleva','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/andoquemelleva.mp3','3:58',6,5,13);
+values('Ando que me lleva','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/andoquemelleva.mp3','3:58',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Acá entre nos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/ac%C3%A1EntreNos.mp3','3:57',6,5,13);
+values('Acá entre nos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/ac%C3%A1EntreNos.mp3','3:57',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La diferencia','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laDiferencia.mp3','3:11',6,5,13);
+values('La diferencia','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laDiferencia.mp3','3:11',6,5,16);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Lástima que seas ajena','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/l%C3%A1stimaqueseasAjena.mp3','3:39',6,5,13);
+values('Lástima que seas ajena','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/l%C3%A1stimaqueseasAjena.mp3','3:39',6,5,16);
 
  
 
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Amor de la calle','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/amordelaCalle.mp3','3:10',6,5,14);
+values('Amor de la calle','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/amordelaCalle.mp3','3:10',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Sueña mi amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/sue%C3%B1amiAmor.mp3','2:27',6,5,14);
+values('Sueña mi amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/sue%C3%B1amiAmor.mp3','2:27',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Con golpes de pecho','chttps://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/conGolpesdePecho.mp3','2:55',6,5,14);
+values('Con golpes de pecho','chttps://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/conGolpesdePecho.mp3','2:55',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Voy a navegar','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/voyaNavegar.mp3','2:57',6,5,14);
+values('Voy a navegar','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/voyaNavegar.mp3','2:57',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Te voy a hacer que me quieras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/teVoyaHacerquemeQuieras.mp3','2:07',6,5,14);
+values('Te voy a hacer que me quieras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/teVoyaHacerquemeQuieras.mp3','2:07',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La cruz de tu olvido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laCruzdetuOlvido.mp3','2:28',6,5,14);
+values('La cruz de tu olvido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laCruzdetuOlvido.mp3','2:28',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,14);
+values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('El Palenque','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elPalenque.mp3','2:20',6,5,14);
+values('El Palenque','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elPalenque.mp3','2:20',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Te llevaré conmigo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/teLlevar%C3%A9Conmigo.mp3','3:04',6,5,14);
+values('Te llevaré conmigo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/teLlevar%C3%A9Conmigo.mp3','3:04',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('El jalisciense','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elJalisciense.mp3','2:37',6,5,14);
+values('El jalisciense','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elJalisciense.mp3','2:37',6,5,17);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Al final del camino','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/alFinaldelCamino.mp3','3:03',6,5,14);
+values('Al final del camino','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/alFinaldelCamino.mp3','3:03',6,5,17);
 
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dolor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Dolor.mp3','3:08',6,5,15);
+values('Dolor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Dolor.mp3','3:08',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Por Un Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/porUnAmor.mp3','3:23',6,5,15);
+values('Por Un Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/porUnAmor.mp3','3:23',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,15);
+values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,15);
+values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('De 7 A 9','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/De7A9.mp3','3:03',6,5,15);
+values('De 7 A 9','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/De7A9.mp3','3:03',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('México Lindo y Querido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A9xicoLindoyQuerido.mp3','3:48',6,5,15);
+values('México Lindo y Querido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A9xicoLindoyQuerido.mp3','3:48',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('El Ranchero','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elRanchero.mp3','2:00',6,5,15);
+values('El Ranchero','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elRanchero.mp3','2:00',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No Me Se Rajar ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noMeSeRajar.mp3','3:00',6,5,15);
+values('No Me Se Rajar ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noMeSeRajar.mp3','3:00',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Motivos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Motivos.mp3','3:04',6,5,15);
+values('Motivos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Motivos.mp3','3:04',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Que Te Vaya Bonito ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/queTeVayaBonito.mp3','3:40',6,5,15);
+values('Que Te Vaya Bonito ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/queTeVayaBonito.mp3','3:40',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('De Que Manera Te Olvido ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/deQueManeraTeOlvido.mp3','3:14',6,5,15);
+values('De Que Manera Te Olvido ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/deQueManeraTeOlvido.mp3','3:14',6,5,18);
 
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Dolor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Dolor.mp3','3:08',6,5,15);
+values('Dolor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Dolor.mp3','3:08',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Por Un Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/porUnAmor.mp3','3:23',6,5,15);
+values('Por Un Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/porUnAmor.mp3','3:23',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,15);
+values('La ley del monte','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/laLeydelMonte.mp3','3:28',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,15);
+values('Volver volver','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/volverVolver.mp3','2:57',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('De 7 A 9','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/De7A9.mp3','3:03',6,5,15);
+values('De 7 A 9','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/De7A9.mp3','3:03',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('México Lindo y Querido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A9xicoLindoyQuerido.mp3','3:48',6,5,15);
+values('México Lindo y Querido','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/m%C3%A9xicoLindoyQuerido.mp3','3:48',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('El Ranchero','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elRanchero.mp3','2:00',6,5,15);
+values('El Ranchero','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/elRanchero.mp3','2:00',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('No Me Se Rajar ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noMeSeRajar.mp3','3:00',6,5,15);
+values('No Me Se Rajar ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/noMeSeRajar.mp3','3:00',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Motivos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Motivos.mp3','3:04',6,5,15);
+values('Motivos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/Motivos.mp3','3:04',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('Que Te Vaya Bonito ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/queTeVayaBonito.mp3','3:40',6,5,15);
+values('Que Te Vaya Bonito ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/queTeVayaBonito.mp3','3:40',6,5,18);
 insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
-values('De Que Manera Te Olvido ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/deQueManeraTeOlvido.mp3','3:14',6,5,15);
+values('De Que Manera Te Olvido ','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Vicente%20Fernandez/deQueManeraTeOlvido.mp3','3:14',6,5,18);
+
+-- Marc Antony -----------------------------------------------
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Úsame','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/%C3%9Asame.mp3','5:00',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Parecen viernes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Parecen%20Viernes.mp3','4:28',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lo que te di','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Lo%20Que%20Te%20Di.mp3','4:02',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Un amor eterno','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Un%20Amor%20Eterno.mp3','4:19',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lo peor de mí','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Lo%20Peor%20de%20M%C3%AD.mp3','5:10',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Reconozco','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Reconozco.mp3','4:08',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Soy yo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Soy%20Yo.mp3','4:51',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Tu vida en la mía','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tu%20vida%20en%20la%20mia.mp3','6:14',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Si me creyeras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Si%20Me%20Creyeras.mp3','4:30',1,1,19);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Si pudiera','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Si%20Pudiera.mp3','4:26',1,1,19);
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Volver a comenzar','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Volver%20a%20Comenzar.mp3','4:37',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Cautivo de tu amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Cautivo%20de%20Este%20Amor.mp3','3:40',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Espera','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Espera.mp3','4:01',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('La copa rota','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/La%20Copa%20Rota.mp3','3:29',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Hipocresía','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Hipocres%C3%ADa.mp3','4:32',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Cambio de piel','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Cambio%20de%20Piel.mp3','4:39',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Vivir mi vida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Vivir%20Mi%20Vida.mp3','3:51',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Flor pálida','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Flor%20P%C3%A1lida.mp3','4:40',1,1,20);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dime si no es verdad','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Dime%20Si%20No%20es%20Verdad.mp3','4:06',1,1,20);
+
+ 
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Escapémonos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Escap%C3%A9monos.mp3','4:46',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Volando Entre Tus Brazos','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Volando%20Entre%20Tus%20Brazos.mp3','4:25',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Tan Solo Palabras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tan%20Solo%20Palabras.mp3','3:42',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Tu Amor Me Hace Bien','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Tu%20Amor%20Me%20Hace%20Bien.mp3','4:36',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Ahora Quien','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Ahora%20Quien.mp3','5:05',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Amar Sin Mentiras','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Amar%20Sin%20Mentiras.mp3','4:50',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Se Esfuma Tu Amor','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Se%20Esfuma%20Tu%20Amor.mp3','3:53',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nada Personal','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Nada%20Personal.mp3','4:40',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Amigo','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Amigo.mp3','3:43',1,1,21);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Valio la Pena','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Marc%20Antony/Valio%20La%20Pena.mp3','3:43',1,1,21);
+
+-- Ed Sheeran -------------------------------------------------------------------------------------
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('The A Team','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/The%20A%20team.mp3','4:50',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lego House','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Lego%20House.mp3','4:06',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Drunk','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Drunk.mp3','3:18',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('U.N.I.','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/UNI.mp3','3:49',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Grade 8','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Grade%208.mp3','3:00',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Wake Me Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Wake%20Me%20Up.mp3','3:48',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Small Bump','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Small%20Bump.mp3','4:26',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('This','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/This.mp3','3:10',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Kiss Me','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Kiss%20Me.mp3','4:41',2,2,22);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Give Me Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Give%20me%20love.mp3','4:22',2,2,22);
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Sing','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Sing.mp3','4:29',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dont','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Dont.mp3','4:52',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Thinking Out Loud','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Thinking%20Out%20Loud.mp3','4:46',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Bloodstream','bloodstream.mp3','4:00',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Im a Mess','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Im%20a%20Mess.mp3','4:12',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Photograph','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/photograph.mp3','4:21',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Afire Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/Afire%20Love.mp3','4:22',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Take It Back','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/takeItBack.mp3','3:28',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Even My Dad Does Sometimes','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/evenMyDadDoesSometimes.mp3','3:46',2,2,23);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Shirtsleeves','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/shirtsleeves.mp3','3:08',2,2,23);
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Shape of You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/shapeofYou.mp3','3:58',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Castle on the Hill','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/castleontheHill.mp3','4:37',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Galway Girl','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/galwayGirl.mp3','2:50',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Perfect','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/perfect.mp3','4:40',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Happier','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/happier.mp3','3:35',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('New Man','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/newMan.mp3','3:09',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dive','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/dive.mp3','3:58',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Supermarket Flowers','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/supermarketFlowers.mp3','3:42',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Barcelona','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/barcelona.mp3','3:11',2,2,24);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Nancy Mulligan','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Ed%20Sheeran/nancyMulligan.mp3','3:00',2,2,24);
+
+-- Adele --------------------------------
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Rolling in the Deep','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Rolling%20in%20the%20Deep.mp3','3:53',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Someone Like You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Someone%20Like%20You.mp3','4:46',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Set Fire to the Rain','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Set%20Fire%20to%20the%20Rain.mp3','3:58',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Rumour Has It','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Rumour%20Has%20It.mp3','3:43',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Turning Tables','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Turning%20Tables.mp3','4:04',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dont You Remember','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Dont%20You%20Remember.mp3','4:15',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('One and Only','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/One%20And%20Only.mp3','5:46',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Lovesong','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Lovesong.mp3','5:17',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Take It All','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Take%20It%20All.mp3','3:50',2,4,25);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('He Wont Go','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/He%20Wont%20Go.mp3','4:39',2,4,25);
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Hello','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Hello.mp3','6:06',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Send My Love (To Your New Lover)','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Send%20My%20Love%20To%20Your%20New%20Lover.mp3','3:45',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('I Miss You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/I%20Miss%20You.mp3','5:49',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('When We Were Young','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/When%20We%20Were%20Young.mp3','4:51',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Remedy','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Remedy.mp3','4:05',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Water Under the Bridge','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Water%20Under%20the%20Bridge.mp3','4:00',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('River Lea','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/River%20Lea.mp3','3:45',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('All I Ask','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/All%20I%20Ask.mp3','4:35',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Love in the Dark','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Love%20In%20The%20Dark.mp3','4:46',2,4,26);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Sweetest Devotion','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Sweetest%20Devotion.mp3','4:12',2,4,26);
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Chasing Pavements','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Chasing%20Pavements.mp3','3:31',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Hometown Glory','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Hometown%20Glory.mp3','4:31',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Make You Feel My Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Make%20You%20Feel%20My%20Love.mp3','3:32',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('First Love','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/First%20Love.mp3','3:10',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Daydreamer','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Daydreamer.mp3','3:41',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Melt My Heart to Stone','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Melt%20My%20Heart%20To%20Stone.mp3','3:24',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Cold Shoulder','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Cold%20Shoulder.mp3','3:12',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Tired','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Tired.mp3','4:19',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('My Same','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/My%20Same.mp3','3:16',2,4,27);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Right as Rain','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Adele/Right%20As%20Rain.mp3','3:17',2,4,27);
+
+
+
+
+
+
 
 
 INSERT INTO Mixes (nombreMix, descripcionMix, cantidadCanciones)
