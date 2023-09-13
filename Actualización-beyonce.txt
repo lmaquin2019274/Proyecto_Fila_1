@@ -1,0 +1,67 @@
+-- Beyoncé ------------------------------------------
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Formation','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/formation.mp3','4:47',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Sorry','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sorry.mp3','4:26',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Hold Up','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/holdUp.mp3','5:16',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Dont Hurt Yourself','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/Dont%20Hurt%20Yourself.mp3','3:54',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('6 Inch','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/6Inch.mp3','4:20',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Daddy Lessons','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/daddyLessons.mp3','6:26',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Love Drought','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveDrought.mp3','3:26',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Sandcastles','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sandcastles.mp3','4:36',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Freedom','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freedom.mp3','4:50',3,3,10);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('All Night','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/allNight.mp3','6:21',3,3,10);
+
+ 
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Déjà Vu','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/d%C3%A9j%C3%A0Vu.mp3','4:03',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Get Me Bodied','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/getMeBodied.mp3','6:37',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Suga Mama','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/sugaMama.mp3','3:31',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Upgrade U','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/upgradeU.mp3','4:37',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Ring the Alarm','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ringtheAlarm.mp3','3:28',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Kitty Kat','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/kittyKat.mp3','3:56',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Freakum Dress','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/freakumDress.mp3','3:16',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Green Light','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/greenLight.mp3','3:31',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Irreplaceable','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/irreplaceable.mp3','4:13',3,3,11);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Resentment','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/resentment.mp3','4:41',3,3,11);
+
+ 
+
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('1+1','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/1%2B1.mp3','4:29',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('I Care','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ICare.mp3','3:46',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('I Miss You','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/IMissYou.mp3','3:00',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Best Thing I Never Had','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/bestThingINeverHad.mp3','4:12',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Party','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/party.mp3','3:41',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Rather Die Young','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/ratherDieYoung.mp3','3:43',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Start Over','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/startOver.mp3','3:29',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Love on Top','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/loveonTop.mp3','3:16',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('Countdown','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/countdown.mp3','3:33',3,3,12);
+insert into Canciones (nombreCancion, direccionRaw, duracion,codigoGenero,codigoArtista,codigoAlbum) 
+values('End of Time','https://github.com/jmatias-2019152/CancionesProyecto/raw/main/Beyonce/endofTime.mp3','3:46',3,3,12);
